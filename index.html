@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyera Service Bay Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <section class="nav-bar">
+
+        <!-- LEFT SIDE -->
+        <div class="nav-left">
+            <img src="images/logo.svg" alt="Company-Logo">
+          <div class="company-info">
+            <h2>Oyera Auto Service Bay Ltd.</h2>
+          </div>
+           
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="nav-right">
+            <div class="icon-notifications">
+                <a href="#"><i class="fa-solid fa-bell"></i></a>
+            </div>
+            <div class="icon-settings">
+                <a href="#"><i class="fa-solid fa-gear"></i></a>
+            </div>
+            <div class="user-profile">
+                <a href="#"><i class="fas fa-user"></i></a>
+                <span class="user-name">John</span>
+                <a href="#"><i class="fas fa-chevron-down"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN LAYOUT CONTAINER -->
+     <div class="main-container">
+        <aside class="side-bar">
+            <ul class="sidebar-menu">
+                <li><a href="#"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fa-solid fa-users"></i> Customers</a></li>
+                <li><a href="#"><i class="fa-solid fa-car"></i> Vehicles</a></li>
+                <li><a href="#"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a></li>
+                <li><a href="#"><i class="fa-solid fa-user-gear"></i> Technicians</a></li>
+                <li><a href="#"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
+                <li><a href="#"><i class="fa-solid fa-file-invoice"></i> Invoices</a></li>
+                <li><a href="#"><i class="fa-solid fa-chart-pie"></i> Reports</a></li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+
+            <!-- HEADER -->
+            <section class="dashboard-header">
+                <h3>OAS Bay Dashboard</h3>
+                <p>Records & Service Management Overview</p>
+            </section>
+
+            <!-- SUMMARY CARDS -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="card-title">
+                        <h3>Cars Today</h3>
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h2>12</h2>
+                </div>
+
+            <div class="stat-card">
+                <div class="card-title">
+                    <h3>Today's Revenue</h3>
+                    <i class="fas fa-coins"></i>
+                </div>
+                <h2>UGX 1,200,000</h2>
+            </div>
+
+            <div class="stat-card">
+                <div class="card-title">
+                    <h3>Active Jobs</h3>
+                    <i class="fas fa-wrench"></i>
+                </div>
+                <h2>5</h2>
+            </div>
+
+            <div class="stat-card">
+                <div class="card-title">
+                    <h3>Parts Sold</h3>
+                    <i class="fas fa-boxes-stacked"></i>
+                </div>
+                <h2>18</h2>
+            </div>
+        </section>
+
+        <!-- SERVICE INTAKE FORM (UI ONLY) -->
+        <section class="form-section">
+            <h2>New Service Entry</h2>
+
+            <form class="service-form">
+                <input type="text" placeholder="Car Type (e.g. Toyota Hilux)">
+                
+                <select>
+                    <option>Engine Oil Change</option>
+                    <option>Brake Pads</option>
+                    <option>Wheel Alignment</option>
+                    <option>Wheel Balancing</option>
+                </select>
+
+                <input type="text" placeholder="Assigned Technician">
+
+                <input type="text" placeholder="Parts Required">
+
+                <button type="button">Register Job</button>
+            </form>
+        </section>
+
+        <!-- PRICE TABLE -->
+        <section class="price-table">
+            <h2>Service Pricing</h2>
+
+            <table>
+                <tr>
+                    <th>Service</th>
+                    <th>Price (UGX)</th>
+                </tr>
+                <tr>
+                    <td>Labour Charge</td>
+                    <td>20,000</td>
+                </tr>
+                <tr>
+                    <td>Wheel Alignment</td>
+                    <td>30,000</td>
+                </tr>
+                <tr>
+                    <td>Wheel Balancing</td>
+                    <td>20,000</td>
+                </tr>
+                <tr>
+                    <td>Brake Fluid</td>
+                    <td>13,000 – 20,000</td>
+                </tr>
+                <tr>
+                    <td>Engine Oil</td>
+                    <td>79,000 – 200,000</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- ACTIVE JOBS -->
+        <section class="jobs">
+            <h2>Active Service Jobs</h2>
+
+            <div class="job-card">
+                <p><strong>Car:</strong> Toyota Hiace</p>
+                <p><strong>Technician:</strong> John</p>
+                <p><strong>Service:</strong> Brake Pads + Oil Change</p>
+            </div>
+
+            <div class="job-card">
+                <p><strong>Car:</strong> Isuzu Truck</p>
+                <p><strong>Technician:</strong> Sarah</p>
+                <p><strong>Service:</strong> Wheel Alignment</p>
+            </div>
+        </section>
+
+    </main> 
+ </div>
+    
+</body>
+</html>
