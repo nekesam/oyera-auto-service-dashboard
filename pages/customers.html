@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Registration</title>
+    <link rel="stylesheet" href="../css/customers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <section class="nav-bar">
+
+        <!-- LEFT SIDE -->
+        <div class="nav-left">
+            <img src="../images/logo.svg" alt="Company-Logo">
+            <div class="company-info">
+                <h2>Oyera Auto Service Bay Ltd.</h2>
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="nav-right">
+            <div class="icon-notifications">
+                <a href="#"><i class="fa-solid fa-bell"></i></a>
+            </div>
+            <div class="icon-settings">
+                <a href="#"><i class="fa-solid fa-gear"></i></a>
+            </div>
+            <div class="user-menu">
+                <div class="user-profile">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                </div>
+                <span class="username">John</span>
+            
+                <button class="menu-btn">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            
+                <div class="dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="logout.html">Logout</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- MAIN LAYOUT CONTAINER -->
+    <div class="main-container">
+        <aside class="side-bar">
+            <ul class="sidebar-menu">
+                <li><a href="../index.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="customers.html"><i class="fa-solid fa-users"></i> Customers</a></li>
+                <li><a href="#"><i class="fa-solid fa-car"></i> Vehicles</a></li>
+                <li><a href="#"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a></li>
+                <li><a href="#"><i class="fa-solid fa-user-gear"></i> Technicians</a></li>
+                <li><a href="#"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
+                <li><a href="#"><i class="fa-solid fa-file-invoice"></i> Invoices</a></li>
+                <li><a href="#"><i class="fa-solid fa-chart-pie"></i> Reports</a></li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+
+            <!-- HEADER -->
+            <section class="customer-header">
+                    <h3>Customer Registration</h3>
+                    <p>Manage customer records</p>
+            </section>
+
+            <!-- CUSTOMER REGISTRATION FORM -->
+            <section class="customer-registration">
+                <form action="#" method="post" class="customer-form">
+                    <div class="form-group">
+                        <label for="customer-id">Customer ID</label>
+                        <input type="text" id="customer-id" name="customer-id" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last-name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Physical Address</label>
+                        <input type="text" id="address" name="address">
+                    </div>
+
+                    <button type="submit">Add Customer</button>
+
+                </form>
+            </section>
+            <section class="customer-records">
+            
+                <div class="records-header">
+                    <h2>Customer Records</h2>
+            
+                    <div class="search-container">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search customer...">
+                    </div>
+                </div>
+            
+                <table class="customer-table">
+            
+                    <thead>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>Full Name</th>
+                            <th>Phone Number</th>
+                            <th>Email Address</th>
+                            <th>Address</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+            
+                    <tbody>
+            
+                        <tr>
+                            <td>C001</td>
+                            <td>John Doe</td>
+                            <td>0700000000</td>
+                            <td>john@example.com</td>
+                            <td>Kampala</td>
+                            <td>
+                                <i class="fas fa-eye" title="View"></i>
+                                <i class="fas fa-pen" title="Edit"></i>
+                                <i class="fas fa-trash" title="Delete"></i>
+                            </td>
+                        </tr>
+            
+                        <tr>
+                            <td>C002</td>
+                            <td>Mary Namusoke</td>
+                            <td>0780000000</td>
+                            <td>mary@example.com</td>
+                            <td>Entebbe</td>
+                            <td>
+                                <i class="fas fa-eye" title="View"></i>
+                                <i class="fas fa-pen" title="Edit"></i>
+                                <i class="fas fa-trash" title="Delete"></i>
+                            </td>
+                        </tr>
+            
+                        <tr>
+                            <td>C003</td>
+                            <td>Peter Okello</td>
+                            <td>0750000000</td>
+                            <td>peter@example.com</td>
+                            <td>Wakiso</td>
+                            <td>
+                                <i class="fas fa-eye" title="View"></i>
+                                <i class="fas fa-pen" title="Edit"></i>
+                                <i class="fas fa-trash" title="Delete"></i>
+                            </td>
+                        </tr>
+            
+                    </tbody>
+            
+                </table>
+            
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

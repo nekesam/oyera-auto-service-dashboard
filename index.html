@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
-    <section class="nav-bar">
+     <section class="nav-bar">
 
         <!-- LEFT SIDE -->
         <div class="nav-left">
             <img src="images/logo.svg" alt="Company-Logo">
-          <div class="company-info">
-            <h2>Oyera Auto Service Bay Ltd.</h2>
-          </div>
-           
+            <div class="company-info">
+                <h2>Oyera Auto Service Bay Ltd.</h2>
+            </div>
+
         </div>
 
         <!-- RIGHT SIDE -->
@@ -27,20 +27,33 @@
             <div class="icon-settings">
                 <a href="#"><i class="fa-solid fa-gear"></i></a>
             </div>
-            <div class="user-profile">
-                <a href="#"><i class="fas fa-user"></i></a>
-                <span class="user-name">John</span>
-                <a href="#"><i class="fas fa-chevron-down"></i></a>
+            <div class="user-menu">
+                <div class="user-profile">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                </div>
+                <span class="username">John</span>
+            
+                <button class="menu-btn">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            
+                <div class="dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="logout.html">Logout</a>
+                </div>
             </div>
+            
         </div>
     </section>
+    
 
     <!-- MAIN LAYOUT CONTAINER -->
      <div class="main-container">
         <aside class="side-bar">
             <ul class="sidebar-menu">
-                <li><a href="#"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
-                <li><a href="#"><i class="fa-solid fa-users"></i> Customers</a></li>
+                <li><a href="index.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="pages/customers.html"><i class="fa-solid fa-users"></i> Customers</a></li>
                 <li><a href="#"><i class="fa-solid fa-car"></i> Vehicles</a></li>
                 <li><a href="#"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a></li>
                 <li><a href="#"><i class="fa-solid fa-user-gear"></i> Technicians</a></li>
