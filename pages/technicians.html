@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technicians</title>
+    <link rel="stylesheet" href="../css/technicians.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <section class="nav-bar">
+
+        <div class="nav-left">
+            <img src="../images/logo.svg" alt="Company-Logo">
+            <div class="company-info">
+                <h2>Oyera Auto Service Bay Ltd.</h2>
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <div class="icon-notifications">
+                <a href="#"><i class="fa-solid fa-bell"></i></a>
+            </div>
+            <div class="icon-settings">
+                <a href="#"><i class="fa-solid fa-gear"></i></a>
+            </div>
+            <div class="user-menu">
+                <div class="user-profile">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                </div>
+                <span class="username">John</span>
+
+                <button class="menu-btn">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+
+                <div class="dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="logout.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="main-container">
+        <aside class="side-bar">
+            <ul class="sidebar-menu">
+                <li><a href="../index.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="customers.html"><i class="fa-solid fa-users"></i> Customers</a></li>
+                <li><a href="customer-display.html"><i class="fas fa-address-book"></i></i> Customer Display</a></li>
+                <li><a href="vehicles.html"><i class="fa-solid fa-car"></i> Vehicles</a></li>
+                <li><a href="services.html"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a></li>
+                <li><a href="technicians.html" class="active"><i class="fa-solid fa-user-gear"></i> Technicians</a></li>
+                <li><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
+                <li><a href="invoices.html"><i class="fa-solid fa-file-invoice"></i> Invoices</a></li>
+                <li><a href="reports.html"><i class="fa-solid fa-chart-pie"></i> Reports</a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <div class="technicians-page">
+                <header class="page-header">
+                    <h1>Technicians</h1>
+                    <p>Manage technician records and service assignments.</p>
+                </header>
+
+                <section class="technician-stats" aria-label="Technician statistics">
+                    <article class="stat-card">
+                        <div class="stat-icon total">
+                            <i class="fa-solid fa-users-gear" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Total Technicians</p>
+                            <h2>28</h2>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon available">
+                            <i class="fa-solid fa-user-check" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Available Technicians</p>
+                            <h2>12</h2>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon duty">
+                            <i class="fa-solid fa-user-clock" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Technicians on Duty</p>
+                            <h2>10</h2>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon assigned">
+                            <i class="fa-solid fa-clipboard-check" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Assigned Jobs</p>
+                            <h2>19</h2>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="dashboard-card registration-card" aria-labelledby="technician-registration-title">
+                    <div class="card-header">
+                        <h2 id="technician-registration-title">Technician Registration</h2>
+                        <p>Add and manage service-bay technicians for heavy, small, and commercial vehicle jobs.</p>
+                    </div>
+
+                    <form class="technician-form">
+                        <div class="form-group">
+                            <label for="technician-id">Technician ID</label>
+                            <input type="text" id="technician-id" name="technician-id" placeholder="TECH-2026-001" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" name="first-name" placeholder="Isaac" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" name="last-name" placeholder="Okello" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone-number">Phone Number</label>
+                            <input type="tel" id="phone-number" name="phone-number" placeholder="0700 123456" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email-address">Email Address</label>
+                            <input type="email" id="email-address" name="email-address" placeholder="isaac.okello@oasbay.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="specialization">Specialization</label>
+                            <select id="specialization" name="specialization" required>
+                                <option value="" selected disabled>Select specialization</option>
+                                <option>Engine Service</option>
+                                <option>Brake Service</option>
+                                <option>Wheel Alignment</option>
+                                <option>Wheel Balancing</option>
+                                <option>Greasing</option>
+                                <option>General Maintenance</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="experience">Years of Experience</label>
+                            <input type="number" id="experience" name="experience" min="0" max="40" placeholder="7" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select id="status" name="status" required>
+                                <option value="" selected disabled>Select status</option>
+                                <option>Available</option>
+                                <option>Busy</option>
+                                <option>Off Duty</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="primary-btn">Register Technician</button>
+                    </form>
+                </section>
+
+                <section class="dashboard-card" aria-labelledby="technician-records-title">
+                    <div class="records-head">
+                        <h2 id="technician-records-title">Technician Records</h2>
+                        <div class="search-input">
+                            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                            <input type="text" placeholder="Search by technician ID, name, or specialization">
+                        </div>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="records-table">
+                            <thead>
+                                <tr>
+                                    <th>Technician ID</th>
+                                    <th>Name</th>
+                                    <th>Phone Number</th>
+                                    <th>Specialization</th>
+                                    <th>Experience</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>TECH-1001</td>
+                                    <td>Samuel Otema</td>
+                                    <td>0770 400122</td>
+                                    <td>Engine Service</td>
+                                    <td>8 years</td>
+                                    <td><span class="status-badge available">Available</span></td>
+                                    <td class="action-cell">
+                                        <a href="#" class="action-icon view" aria-label="View technician"><i class="fa-solid fa-eye"></i></a>
+                                        <a href="#" class="action-icon edit" aria-label="Edit technician"><i class="fa-solid fa-pen"></i></a>
+                                        <a href="#" class="action-icon delete" aria-label="Delete technician"><i class="fa-solid fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>TECH-1002</td>
+                                    <td>Harriet Namata</td>
+                                    <td>0752 313408</td>
+                                    <td>Brake Service</td>
+                                    <td>6 years</td>
+                                    <td><span class="status-badge busy">Busy</span></td>
+                                    <td class="action-cell">
+                                        <a href="#" class="action-icon view" aria-label="View technician"><i class="fa-solid fa-eye"></i></a>
+                                        <a href="#" class="action-icon edit" aria-label="Edit technician"><i class="fa-solid fa-pen"></i></a>
+                                        <a href="#" class="action-icon delete" aria-label="Delete technician"><i class="fa-solid fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>TECH-1003</td>
+                                    <td>Peter Lubega</td>
+                                    <td>0709 885221</td>
+                                    <td>Wheel Alignment</td>
+                                    <td>9 years</td>
+                                    <td><span class="status-badge off-duty">Off Duty</span></td>
+                                    <td class="action-cell">
+                                        <a href="#" class="action-icon view" aria-label="View technician"><i class="fa-solid fa-eye"></i></a>
+                                        <a href="#" class="action-icon edit" aria-label="Edit technician"><i class="fa-solid fa-pen"></i></a>
+                                        <a href="#" class="action-icon delete" aria-label="Delete technician"><i class="fa-solid fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>TECH-1004</td>
+                                    <td>Esther Akullo</td>
+                                    <td>0784 297541</td>
+                                    <td>Wheel Balancing</td>
+                                    <td>5 years</td>
+                                    <td><span class="status-badge available">Available</span></td>
+                                    <td class="action-cell">
+                                        <a href="#" class="action-icon view" aria-label="View technician"><i class="fa-solid fa-eye"></i></a>
+                                        <a href="#" class="action-icon edit" aria-label="Edit technician"><i class="fa-solid fa-pen"></i></a>
+                                        <a href="#" class="action-icon delete" aria-label="Delete technician"><i class="fa-solid fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>TECH-1005</td>
+                                    <td>John Bosco Ocen</td>
+                                    <td>0714 654209</td>
+                                    <td>General Maintenance</td>
+                                    <td>11 years</td>
+                                    <td><span class="status-badge busy">Busy</span></td>
+                                    <td class="action-cell">
+                                        <a href="#" class="action-icon view" aria-label="View technician"><i class="fa-solid fa-eye"></i></a>
+                                        <a href="#" class="action-icon edit" aria-label="Edit technician"><i class="fa-solid fa-pen"></i></a>
+                                        <a href="#" class="action-icon delete" aria-label="Delete technician"><i class="fa-solid fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section class="dashboard-card assignment-card" aria-labelledby="assignment-title">
+                    <div class="card-header">
+                        <h2 id="assignment-title">Assign Technician to Service</h2>
+                        <p>Assign the right technician based on active vehicle service requirements.</p>
+                    </div>
+
+                    <form class="assignment-form" action="#">
+                        <div class="form-group">
+                            <label for="plate-number">Vehicle Number Plate</label>
+                            <input type="text" id="plate-number" name="plate-number" placeholder="UBA 472M" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service-type">Service Type</label>
+                            <select id="service-type" name="service-type" required>
+                                <option value="" selected disabled>Select service type</option>
+                                <option>Engine Oil Change</option>
+                                <option>Gearbox Oil Change</option>
+                                <option>Brake Fluid Replacement</option>
+                                <option>Brake Pad Change</option>
+                                <option>Wheel Alignment</option>
+                                <option>Wheel Balancing</option>
+                                <option>Greasing</option>
+                                <option>Minor Repairs</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="assigned-technician">Technician</label>
+                            <select id="assigned-technician" name="assigned-technician" required>
+                                <option value="" selected disabled>Select technician</option>
+                                <option>Samuel Otema</option>
+                                <option>Harriet Namata</option>
+                                <option>Peter Lubega</option>
+                                <option>Esther Akullo</option>
+                                <option>John Bosco Ocen</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="primary-btn">Assign Technician</button>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>    
+</body>
+</html>

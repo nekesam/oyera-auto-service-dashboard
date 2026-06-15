@@ -1,0 +1,493 @@
+:root {
+    --bg: #f3f5f8;
+    --surface: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+    --radius: 14px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #fff;
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-left img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.company-info h2 {
+    font-size: 1.15rem;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: none;
+    background: #fff;
+    border: 1px solid var(--border);
+    min-width: 150px;
+    box-shadow: var(--shadow);
+    z-index: 10;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--text);
+}
+
+.user-menu:hover .dropdown {
+    display: block;
+}
+
+.main-container {
+    display: flex;
+    gap: 20px;
+    background-color: #edeef0;
+    min-height: calc(100vh - 82px);
+}
+
+.side-bar {
+    width: 250px;
+    background-color: #1e3a5f;
+    padding: 25px 15px;
+}
+
+.sidebar-menu {
+    list-style: none;
+}
+
+.sidebar-menu li {
+    margin-bottom: 12px;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+}
+
+.sidebar-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateX(4px);
+}
+
+.sidebar-menu a.active {
+    background-color: #fff;
+    color: #1e3a5f;
+}
+
+.content {
+    flex: 1;
+}
+
+.vehicles-page {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.page-header h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.page-header p {
+    color: var(--muted);
+}
+
+.vehicle-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
+    gap: 16px;
+}
+
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.1);
+}
+
+.stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+}
+
+.stat-icon.total {
+    color: #1d4ed8;
+    background: #dbeafe;
+}
+
+.stat-icon.serviced {
+    color: #0f766e;
+    background: #ccfbf1;
+}
+
+.stat-icon.awaiting {
+    color: #a16207;
+    background: #fef3c7;
+}
+
+.stat-icon.completed {
+    color: #166534;
+    background: #dcfce7;
+}
+
+.stat-title {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.stat-content h2 {
+    font-size: 1.45rem;
+    line-height: 1;
+}
+.registration-card {
+    width: min(920px, 100%);
+    margin-bottom: 25px;
+    margin-top: 20px;
+    background-color: rgb(248, 246, 246);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+
+}
+
+.dashboard-card{
+    background-color: rgb(248, 246, 246);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
+}
+
+.card-header h2,
+.records-head h2 {
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+    margin-left: 12px;
+}
+
+.card-header p {
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+.vehicle-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 11px 12px;
+    font-size: 0.92rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
+}
+
+.form-group select{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 14px;
+    background: white;
+}
+
+.form-group select:focus{
+    outline: none;
+    border-color: #2563eb;
+}
+
+.primary-btn {
+    grid-column: 1 / -1;
+    margin-top: 4px;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 16px;
+    background: var(--primary);
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.primary-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.records-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.search-input {
+    position: relative;
+    width: min(360px, 100%);
+}
+
+.search-input i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+.search-input input {
+    width: 100%;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 10px 12px 10px 34px;
+    font-size: 0.9rem;
+}
+
+.search-input input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.records-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 760px;
+}
+
+.records-table th,
+.records-table td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid #edf0f4;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.records-table th {
+    font-size: 0.82rem;
+    color: #4b5563;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    background: #f8fafc;
+}
+
+.records-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.records-table tbody tr:hover {
+    background: #f8fbff;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.status-badge.in-service {
+    color: #9a3412;
+    background: #ffedd5;
+}
+
+.status-badge.completed {
+    color: #166534;
+    background: #dcfce7;
+}
+
+.status-badge.pending {
+    color: #1d4ed8;
+    background: #dbeafe;
+}
+
+.action-cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.action-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    display: inline-grid;
+    place-items: center;
+    border: 1px solid #e5e7eb;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.action-icon.view {
+    color: #2563eb;
+}
+
+.action-icon.edit {
+    color: #059669;
+}
+
+.action-icon.delete {
+    color: #dc2626;
+}
+
+.action-icon:hover {
+    background: #f8fafc;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 1150px) {
+    .vehicle-stats {
+        grid-template-columns: repeat(2, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 820px) {
+    .main-container {
+        gap: 0;
+    }
+
+    .side-bar {
+        display: none;
+    }
+
+    .vehicles-page {
+        padding: 18px;
+    }
+
+    .records-head {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .vehicle-form {
+        grid-template-columns: 1fr;
+    }
+
+    .primary-btn {
+        grid-column: 1;
+    }
+}
+
+@media (max-width: 560px) {
+    .vehicle-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-card {
+        padding: 16px;
+    }
+
+
+    .page-header h1 {
+        font-size: 1.45rem;
+    }
+}
