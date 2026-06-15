@@ -137,7 +137,7 @@ body {
     flex: 1;
 }
 
-.vehicles-page {
+.technicians-page {
     padding: 28px;
     display: flex;
     flex-direction: column;
@@ -154,7 +154,7 @@ body {
     color: var(--muted);
 }
 
-.vehicle-stats {
+.technician-stats {
     display: grid;
     grid-template-columns: repeat(4, minmax(180px, 1fr));
     gap: 16px;
@@ -191,17 +191,17 @@ body {
     background: #dbeafe;
 }
 
-.stat-icon.serviced {
+.stat-icon.available {
     color: #0f766e;
     background: #ccfbf1;
 }
 
-.stat-icon.awaiting {
+.stat-icon.duty {
     color: #a16207;
     background: #fef3c7;
 }
 
-.stat-icon.completed {
+.stat-icon.assigned {
     color: #166534;
     background: #dcfce7;
 }
@@ -216,31 +216,23 @@ body {
     font-size: 1.45rem;
     line-height: 1;
 }
-.registration-card {
-    width: min(920px, 100%);
-    margin-bottom: 25px;
-    margin-top: 20px;
-    background-color: rgb(248, 246, 246);
+
+.dashboard-card {
+    background: var(--surface);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 18px;
     box-shadow: var(--shadow);
-
+    padding: 22px;
 }
 
-.dashboard-card{
-    background-color: rgb(248, 246, 246);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 18px;
-    box-shadow: var(--shadow);
+.registration-card {
+    width: min(920px, 100%);
 }
 
 .card-header h2,
 .records-head h2 {
     font-size: 1.2rem;
     margin-bottom: 4px;
-    margin-left: 12px;
 }
 
 .card-header p {
@@ -248,10 +240,15 @@ body {
     margin-bottom: 18px;
 }
 
-.vehicle-form {
+.technician-form,
+.assignment-form {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
+}
+
+.assignment-card {
+    width: min(920px, 100%);
 }
 
 .form-group {
@@ -265,32 +262,23 @@ body {
     font-weight: 600;
 }
 
-.form-group input {
+.form-group input,
+.form-group select {
     width: 100%;
     border: 1px solid #d1d5db;
     border-radius: 10px;
     padding: 11px 12px;
     font-size: 0.92rem;
+    background: #fff;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.form-group input:focus {
+.form-group input:focus,
+.form-group select:focus,
+.search-input input:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.14);
-}
-
-.form-group select{
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 14px;
-    background: white;
-}
-
-.form-group select:focus{
-    outline: none;
-    border-color: #2563eb;
 }
 
 .primary-btn {
@@ -322,7 +310,7 @@ body {
 
 .search-input {
     position: relative;
-    width: min(360px, 100%);
+    width: min(370px, 100%);
 }
 
 .search-input i {
@@ -340,38 +328,30 @@ body {
     border-radius: 10px;
     padding: 10px 12px 10px 34px;
     font-size: 0.9rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-
-.search-input input:focus {
-    outline: none;
-    border-color: var(--primary);
-}
-
-.table-wrapper {
-    overflow-x: auto;
-}
-
+ 
 .records-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 760px;
+    min-width: 780px;
 }
 
-.records-table th,
-.records-table td {
+.records-table thead th {
     text-align: left;
-    padding: 12px 14px;
-    border-bottom: 1px solid #edf0f4;
-    vertical-align: middle;
-    white-space: nowrap;
-}
-
-.records-table th {
     font-size: 0.82rem;
-    color: #4b5563;
     letter-spacing: 0.02em;
     text-transform: uppercase;
+    color: #6b7280;
     background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 12px;
+}
+
+.records-table tbody td {
+    padding: 13px 12px;
+    border-bottom: 1px solid #eef2f7;
+    font-size: 0.92rem;
 }
 
 .records-table tbody tr {
@@ -379,7 +359,7 @@ body {
 }
 
 .records-table tbody tr:hover {
-    background: #f8fbff;
+    background: #f9fbff;
 }
 
 .status-badge {
@@ -387,29 +367,30 @@ body {
     align-items: center;
     padding: 5px 10px;
     border-radius: 999px;
-    font-size: 0.76rem;
-    font-weight: 700;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1;
 }
 
-.status-badge.in-service {
-    color: #9a3412;
-    background: #ffedd5;
-}
-
-.status-badge.completed {
+.status-badge.available {
     color: #166534;
     background: #dcfce7;
 }
 
-.status-badge.pending {
-    color: #1d4ed8;
-    background: #dbeafe;
+.status-badge.busy {
+    color: #92400e;
+    background: #ffedd5;
+}
+
+.status-badge.off-duty {
+    color: #6b21a8;
+    background: #ede9fe;
 }
 
 .action-cell {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .action-icon {
@@ -418,45 +399,48 @@ body {
     border-radius: 8px;
     display: inline-grid;
     place-items: center;
-    border: 1px solid #e5e7eb;
     text-decoration: none;
-    transition: all 0.2s ease;
-}
-
-.action-icon.view {
-    color: #2563eb;
-}
-
-.action-icon.edit {
-    color: #059669;
-}
-
-.action-icon.delete {
-    color: #dc2626;
+    font-size: 0.82rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .action-icon:hover {
-    background: #f8fafc;
     transform: translateY(-1px);
 }
 
-@media (max-width: 1150px) {
-    .vehicle-stats {
+.action-icon.view {
+    color: #1d4ed8;
+    background: #dbeafe;
+}
+
+.action-icon.edit {
+    color: #0f766e;
+    background: #ccfbf1;
+}
+
+.action-icon.delete {
+    color: #b91c1c;
+    background: #fee2e2;
+}
+
+@media (max-width: 1200px) {
+    .technician-stats {
         grid-template-columns: repeat(2, minmax(180px, 1fr));
     }
 }
 
-@media (max-width: 820px) {
+@media (max-width: 900px) {
     .main-container {
         gap: 0;
     }
 
-    .side-bar {
-        display: none;
+    .technicians-page {
+        padding: 20px;
     }
 
-    .vehicles-page {
-        padding: 18px;
+    .technician-form,
+    .assignment-form {
+        grid-template-columns: 1fr;
     }
 
     .records-head {
@@ -467,27 +451,15 @@ body {
     .search-input {
         width: 100%;
     }
-
-    .vehicle-form {
-        grid-template-columns: 1fr;
-    }
-
-    .primary-btn {
-        grid-column: 1;
-    }
 }
 
-@media (max-width: 560px) {
-    .vehicle-stats {
+@media (max-width: 700px) {
+    .technician-stats {
         grid-template-columns: 1fr;
     }
 
-    .dashboard-card {
+    .dashboard-card,
+    .stat-card {
         padding: 16px;
-    }
-
-
-    .page-header h1 {
-        font-size: 1.45rem;
     }
 }

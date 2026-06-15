@@ -1,11 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Vehicles Management</title>
+    <link rel="stylesheet" href="../css/vehicles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
+
 <body>
-    
+    <section class="nav-bar">
+
+        <div class="nav-left">
+            <img src="../images/logo.svg" alt="Company-Logo">
+            <div class="company-info">
+                <h2>Oyera Auto Service Bay Ltd.</h2>
+            </div>
+        </div>
+
+        <div class="nav-right">
+            <div class="icon-notifications">
+                <a href="#"><i class="fa-solid fa-bell"></i></a>
+            </div>
+            <div class="icon-settings">
+                <a href="#"><i class="fa-solid fa-gear"></i></a>
+            </div>
+            <div class="user-menu">
+                <div class="user-profile">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                </div>
+                <span class="username">John</span>
+
+                <button class="menu-btn">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+
+                <div class="dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="logout.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <aside class="side-bar">
+            <ul class="sidebar-menu">
+                <li><a href="../index.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="customers.html"><i class="fa-solid fa-users"></i> Customers</a></li>
+                <li><a href="customer-display.html"><i class="fas fa-address-book"></i></i> Customer Display</a></li>
+                <li><a href="vehicles.html" class="active"><i class="fa-solid fa-car"></i> Vehicles</a></li>
+                <li><a href="services.html"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a></li>
+                <li><a href="technicians.html"><i class="fa-solid fa-user-gear"></i> Technicians</a></li>
+                <li><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
+                <li><a href="invoices.html"><i class="fa-solid fa-file-invoice"></i> Invoices</a></li>
+                <li><a href="reports.html"><i class="fa-solid fa-chart-pie"></i> Reports</a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <div class="vehicles-page">
+                <header class="page-header">
+                    <h1>Vehicles Management</h1>
+                    <p>Manage registered vehicles, current service queues, and completion status.</p>
+                </header>
+
+                <section class="vehicle-stats" aria-label="Vehicle statistics">
+                    <article class="stat-card">
+                        <div class="stat-icon total">
+                            <i class="fas fa-car" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Total Vehicles</p>
+                            <h2>1,248</h2>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon serviced">
+                            <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Vehicles Serviced Today</p>
+                            <h2>34</h2>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon awaiting">
+                            <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Vehicles Awaiting Service</p>
+                            <h2>18</h2>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon completed">
+                            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Completed Services</p>
+                            <h2>412</h2>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="dashboard-card registration-card" aria-labelledby="registration-title">
+                    <div class="card-header">
+                        <h2 id="registration-title">Vehicle Registration</h2>
+                        <p>Add new vehicle details into the service system.</p>
+                    </div>
+
+                    <form class="vehicle-form" action="#">
+                        <div class="form-group">
+                            <label for="vehicle-id">Vehicle ID</label>
+                            <input type="text" id="vehicle-id" name="vehicle-id" placeholder="VH-2026-001" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="number-plate">Number Plate</label>
+                            <input type="text" id="number-plate" name="number-plate" placeholder="UBA 123X" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vehicle-make">Vehicle Make</label>
+                            <input type="text" id="vehicle-make" name="vehicle-make" placeholder="Toyota" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vehicle-model">Vehicle Model</label>
+                            <input type="text" id="vehicle-model" name="vehicle-model" placeholder="Corolla" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="year">Year</label>
+                            <input type="number" id="year" name="year" min="1990" max="2030" placeholder="2021"
+                                required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="color">Color</label>
+                            <input type="text" id="color" name="color" placeholder="Silver" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customer-name">Customer Name</label>
+                            <input type="text" id="customer-name" name="customer-name" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vehicle-type">Vehicle Type</label>
+                            <select id="vehicle-type" name="vehicle-type" required> 
+                                <option value="" select disabled>Select Type</option>
+                                <option value="small">Small Vehicle</option>
+                                <option value="commercial">Commercial Vehicle</option>
+                                <option value="heavy">Heavy Vehicle</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone-number">Phone Number</label>
+                            <input type="tel" id="phone-number" name="phone-number" placeholder="0700 000000" required>
+                        </div>
+
+                        <button type="submit" class="primary-btn">Register Vehicle</button>
+                    </form>
+                </section>
+
+                <section class="dashboard-card" aria-labelledby="records-title">
+                    <div class="records-head">
+                        <h2 id="records-title">Vehicle Records</h2>
+                        <div class="search-input">
+                            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                            <input type="text" placeholder="Search by plate number, owner, or model">
+                        </div>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="records-table">
+                            <thead>
+                                <tr>
+                                    <th>Vehicle ID</th>
+                                    <th>Plate Number</th>
+                                    <th>Owner</th>
+                                    <th>Make</th>
+                                    <th>Model</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>VH-1024</td>
+                                    <td>UBA 421D</td>
+                                    <td>Sarah K.</td>
+                                    <td>Honda</td>
+                                    <td>Civic</td>
+                                    <td><span class="status-badge in-service">In Service</span></td>
+                                    <td class="action-cell">
+                                        <a href="#" class="action-icon view" aria-label="View vehicle"><i
+                                                class="fa-solid fa-eye"></i></a>
+                                        <a href="#" class="action-icon edit" aria-label="Edit vehicle"><i
+                                                class="fa-solid fa-pen"></i></a>
+                                        <a href="#" class="action-icon delete" aria-label="Delete vehicle"><i
+                                                class="fa-solid fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>VH-1025</td>
+                                    <td>UBG 990Q</td>
+                                    <td>Michael O.</td>
+                                    <td>Toyota</td>
+                                    <td>RAV4</td>
+                                    <td><span class="status-badge completed">Completed</span></td>
+                                    <td class="action-cell">
+                                        <a href="#" class="action-icon view" aria-label="View vehicle"><i
+                                                class="fa-solid fa-eye"></i></a>
+                                        <a href="#" class="action-icon edit" aria-label="Edit vehicle"><i
+                                                class="fa-solid fa-pen"></i></a>
+                                        <a href="#" class="action-icon delete" aria-label="Delete vehicle"><i
+                                                class="fa-solid fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>VH-1026</td>
+                                    <td>UBM 315N</td>
+                                    <td>Esther T.</td>
+                                    <td>Nissan</td>
+                                    <td>X-Trail</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td class="action-cell">
+                                        <a href="#" class="action-icon view" aria-label="View vehicle"><i
+                                                class="fa-solid fa-eye"></i></a>
+                                        <a href="#" class="action-icon edit" aria-label="Edit vehicle"><i
+                                                class="fa-solid fa-pen"></i></a>
+                                        <a href="#" class="action-icon delete" aria-label="Delete vehicle"><i
+                                                class="fa-solid fa-trash"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
 </body>
+
 </html>

@@ -1,7 +1,24 @@
+:root {
+    --bg: #f3f5f8;
+    --surface: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+    --radius: 14px;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
 }
 
 /* NAV BAR */
@@ -152,15 +169,9 @@
 }
 
 
-body{
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
-    color: #333;
-}
-
 /* MAIN CONTENT */
 .content{
-    padding: 40px;
+    padding: 10px;
 }
 
 /* DASHBOARD HEADER */
@@ -168,7 +179,7 @@ body{
     margin-bottom: 30px;
 }
 
-.dashboard-header h3{
+.dashboard-header h1{
     margin-bottom: 10px;
     color: #1e3a8a;
 }
@@ -178,43 +189,112 @@ body{
 }
 
 /* SUMMARY CARDS */
-.stats-grid{
+.content {
+    flex: 1;
+}
+
+.dashboard-page {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.page-header h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.page-header p {
+    color: var(--muted);
+}
+
+.dashboard-stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-bottom: 30px;
-} 
-
-.stat-card{
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
+    gap: 16px;
 }
-
-.stat-card h3{
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.stat-card h2{
-    color: #1e3a8a;
-}
-
-.card-title{
+.stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+    box-shadow: var(--shadow);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 10px;
+    gap: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card-title i{
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.1);
+}
+
+.stat-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+}
+
+.stat-icon.total {
+    color: #1d4ed8;
+    background: #dbeafe;
+}
+
+.stat-icon.revenue {
+    color: #0f766e;
+    background: #ccfbf1;
+}
+
+.stat-icon.active-jobs {
+    color: #a16207;
+    background: #fef3c7;
+}
+
+.stat-icon.parts-sold {
+    color: #166534;
+    background: #dcfce7;
+}
+
+.stat-title {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+.stat-content h2 {
+    font-size: 1.45rem;
+    line-height: 1;
+}
+
+.dashboard-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px;
+}
+
+.registration-card {
+    width: min(920px, 100%);
+}
+
+.card-header h2,
+.records-head h2 {
     font-size: 1.2rem;
+    margin-bottom: 4px;
 }
 
-.card-title h3{
-    margin-bottom: 10px;
+.card-header p {
+    color: var(--muted);
+    margin-bottom: 18px;
 }
+
 
 /* FORM SECTION */
 .form-section{

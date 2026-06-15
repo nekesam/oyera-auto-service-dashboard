@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Display</title>
+    <link rel="stylesheet" href="../css/customer-display.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <section class="nav-bar">
+
+        <!-- LEFT SIDE -->
+        <div class="nav-left">
+            <img src="../images/logo.svg" alt="Company-Logo">
+            <div class="company-info">
+                <h2>Oyera Auto Service Bay Ltd.</h2>
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="nav-right">
+            <div class="icon-notifications">
+                <a href="#"><i class="fa-solid fa-bell"></i></a>
+            </div>
+            <div class="icon-settings">
+                <a href="#"><i class="fa-solid fa-gear"></i></a>
+            </div>
+            <div class="user-menu">
+                <div class="user-profile">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                </div>
+                <span class="username">John</span>
+            
+                <button class="menu-btn">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            
+                <div class="dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="logout.html">Logout</a>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- MAIN LAYOUT CONTAINER -->
+    <div class="main-container">
+        <aside class="side-bar">
+            <ul class="sidebar-menu">
+                <li><a href="../index.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="customers.html"><i class="fa-solid fa-users"></i> Customers</a></li>
+                <li><a href="customer-display.html" class="active"><i class="fas fa-address-book"></i></i> Customer Display</a></li>
+                <li><a href="vehicles.html"><i class="fa-solid fa-car"></i> Vehicles</a></li>
+                <li><a href="services.html"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a></li>
+                <li><a href="technicians.html"><i class="fa-solid fa-user-gear"></i> Technicians</a></li>
+                <li><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
+                <li><a href="invoices.html"><i class="fa-solid fa-file-invoice"></i> Invoices</a></li>
+                <li><a href="reports.html"><i class="fa-solid fa-chart-pie"></i> Reports</a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <!-- header -->
+            <div class="customer-page">
+                <header class="page-header">
+                    <h1>Customer Display</h1>
+                    <p>View and manage customer information</p>
+                </header>
+        
+                <!-- Customer statistics -->
+                <section class="customer-stats">
+                    <article class="stat-card">
+                        <div class="stat-icon total">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Total customers Today</p>
+                            <h2>195</h2>
+                        </div>
+                    </article>
+        
+                    <article class="stat-card">
+                        <div class="stat-icon active">
+                            <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Active Customers</p>
+                            <h2>98</h2>
+                        </div>
+                    </article>
+        
+                    <article class="stat-card">
+                        <div class="stat-icon new">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">New Customers</p>
+                            <h2>15</h2>
+                        </div>
+                    </article>
+        
+                    <article class="stat-card">
+                        <div class="stat-icon vehicles">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Registered Vehicles</p>
+                            <h2>201</h2>
+                        </div>
+                    </article>
+        
+                </section>
+        
+                <!-- Records -->
+                <section class="customer-records">
+                <div class="records-header">
+                    <div class="header">
+                        <h2>Customer Records</h2>
+                        <p>Browse, Search and manage Registered Customers</p>
+                    </div>
+                    <div class="search-input">
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                        <input type="text" placeholder="Search by customer ID, name, or status">
+                    </div>
+                </div>
+                    <table class="table table-striped-columns">
+                        <thead>
+                            <tr>
+                                <th>Customer ID</th>
+                                <th>Full Name</th>
+                                <th>Phone Number</th>
+                                <th>Email</th>
+                                <th>Vehicle Registration Number</th>
+                                <th>Last Service Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>C001</td>
+                                <td>John Doe</td>
+                                <td>0701234567</td>
+                                <td>johndoe@gmail.com</td>
+                                <td>UBA 123A</td>
+                                <td>12-Jun-2026</td>
+                                <td>Active</td>
+                                <td class="action-cell">
+                                    <a href="#" class="action-icon view" aria-label="View customer"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="#" class="action-icon edit" aria-label="Edit customer"><i class="fa-solid fa-pen"></i></a>
+                                    <a href="#" class="action-icon delete" aria-label="Delete customer"><i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>C003</td>
+                                <td>Peter Okello</td>
+                                <td>0753456789</td>
+                                <td>p.okello@gmail.com</td>
+                                <td>UBC 789C</td>
+                                <td>08-Jun-2026</td>
+                                <td>Inactive</td>
+                                    <td class="action-cell">
+                                        <a href="#" class="action-icon view" aria-label="View customer"><i class="fa-solid fa-eye"></i></a>
+                                        <a href="#" class="action-icon edit" aria-label="Edit customer"><i class="fa-solid fa-pen"></i></a>
+                                        <a href="#" class="action-icon delete" aria-label="Delete customer"><i class="fa-solid fa-trash"></i></a>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td>C004</td>
+                                <td>Grace Achieng</td>
+                                <td>0784567890</td>
+                                <td>grace.a@gmail.com</td>
+                                <td>UBD 234D</td>
+                                <td>15-Jun-2026</td>
+                                <td>Active</td>
+                                <td class="action-cell">
+                                    <a href="#" class="action-icon view" aria-label="View customer"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="#" class="action-icon edit" aria-label="Edit customer"><i class="fa-solid fa-pen"></i></a>
+                                    <a href="#" class="action-icon delete" aria-label="Delete customer"><i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </main>
+        
+        </body>
+        
+        </html>

@@ -1,15 +1,25 @@
+:root {
+    --bg: #f3f5f8;
+    --surface: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+    --radius: 14px;
+}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f9;
-    color: #333;
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
 }
-
 
 /* NAV BAR */
 .nav-bar {
@@ -19,9 +29,9 @@ body{
 
     padding: 15px 30px;
 
-    background-color: white;
-    border-bottom: 1px solid #e5e7eb;
-    border-radius: 1px solid rgb(99, 97, 97)
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--border);
+    border-radius: var(--radius);
 }
 
 .nav-left {
@@ -171,12 +181,13 @@ body{
 
 .customer-header h3 {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #333;
     margin-bottom: 8px;
 }
 
 .customer-registration{
+    width: min(920px, 100%);
     background: #fff;
     padding: 20px;
     border-radius: 8px;
@@ -246,11 +257,12 @@ body{
 .records-header h2{
     margin: 0;
     font-size: 1.3rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #333;
 }
 .search-container{
   position: relative;
+
 
 }
 
@@ -267,7 +279,7 @@ body{
     padding: 10px 15px 10px 35px;
     width: 250px;
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 13px;
 }
 
@@ -285,7 +297,7 @@ body{
     background: #f4f4f4;
     padding: 12px;
     text-align: left;
-    font-weight: 600;
+    font-weight: 700;
     color: #333;
 }
 
