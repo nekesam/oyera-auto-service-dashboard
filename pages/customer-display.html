@@ -6,16 +6,16 @@
     <title>Customer Display</title>
     <link rel="stylesheet" href="../css/customer-display.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
 <body>
     <section class="nav-bar">
 
         <!-- LEFT SIDE -->
         <div class="nav-left">
-            <img src="../images/logo.svg" alt="Company-Logo">
+            <img src="../images/service-logo.png" alt="Company-Logo">
             <div class="company-info">
-                <h2>Oyera Auto Service Bay Ltd.</h2>
+                <!-- <h2>Oyera Auto Service Bay Ltd.</h2> -->
             </div>
 
         </div>
@@ -57,9 +57,11 @@
                 <li><a href="customer-display.html" class="active"><i class="fas fa-address-book"></i></i> Customer Display</a></li>
                 <li><a href="vehicles.html"><i class="fa-solid fa-car"></i> Vehicles</a></li>
                 <li><a href="services.html"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a></li>
+                <li><a href="service-registration.html"><i class="fa-solid fa-screwdriver-wrench"></i> Service Registration</a>
+                </li>
                 <li><a href="technicians.html"><i class="fa-solid fa-user-gear"></i> Technicians</a></li>
                 <li><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
-                <li><a href="invoices.html"><i class="fa-solid fa-file-invoice"></i> Invoices</a></li>
+                <li><a href="invoices.html"><i class="fa-solid fa-file-invoice"></i>Payments</a></li>
                 <li><a href="reports.html"><i class="fa-solid fa-chart-pie"></i> Reports</a></li>
                 <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
@@ -129,60 +131,56 @@
                         <input type="text" placeholder="Search by customer ID, name, or status">
                     </div>
                 </div>
-                    <table class="table table-striped-columns">
+                    <table class="records-table">
                         <thead>
-                            <tr>
-                                <th>Customer ID</th>
-                                <th>Full Name</th>
-                                <th>Phone Number</th>
-                                <th>Email</th>
-                                <th>Vehicle Registration Number</th>
-                                <th>Last Service Date</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
+                          <tr>
+                            <th>Customer ID</th>
+                            <th>Full Name</th>
+                            <th>Phone Number</th>
+                            <th>Vehicles Owned</th>
+                            <th>Last Visit</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                          </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td>C001</td>
                                 <td>John Doe</td>
                                 <td>0701234567</td>
-                                <td>johndoe@gmail.com</td>
-                                <td>UBA 123A</td>
+                                <td>2</td>
                                 <td>12-Jun-2026</td>
-                                <td>Active</td>
+                                <td><span class="status-badge active">Active</span></td>
                                 <td class="action-cell">
-                                    <a href="#" class="action-icon view" aria-label="View customer"><i class="fa-solid fa-eye"></i></a>
-                                    <a href="#" class="action-icon edit" aria-label="Edit customer"><i class="fa-solid fa-pen"></i></a>
-                                    <a href="#" class="action-icon delete" aria-label="Delete customer"><i class="fa-solid fa-trash"></i></a>
+                                    <a href="#" class="action-icon view"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="#" class="action-icon edit"><i class="fa-solid fa-pen"></i></a>
+                                    <a href="#" class="action-icon delete"><i class="fa-solid fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>C002</td>
+                                <td>NANYA LIZ</td>
+                                <td>0701234567</td>
+                                <td>3</td>
+                                <td>1-Jun-2026</td>
+                                <td><span class="status-badge active">Active</span></td>
+                                <td class="action-cell">
+                                    <a href="#" class="action-icon view"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="#" class="action-icon edit"><i class="fa-solid fa-pen"></i></a>
+                                    <a href="#" class="action-icon delete"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                             <tr>
                                 <td>C003</td>
-                                <td>Peter Okello</td>
-                                <td>0753456789</td>
-                                <td>p.okello@gmail.com</td>
-                                <td>UBC 789C</td>
-                                <td>08-Jun-2026</td>
-                                <td>Inactive</td>
-                                    <td class="action-cell">
-                                        <a href="#" class="action-icon view" aria-label="View customer"><i class="fa-solid fa-eye"></i></a>
-                                        <a href="#" class="action-icon edit" aria-label="Edit customer"><i class="fa-solid fa-pen"></i></a>
-                                        <a href="#" class="action-icon delete" aria-label="Delete customer"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
-                            </tr>
-                            <tr>
-                                <td>C004</td>
-                                <td>Grace Achieng</td>
-                                <td>0784567890</td>
-                                <td>grace.a@gmail.com</td>
-                                <td>UBD 234D</td>
-                                <td>15-Jun-2026</td>
-                                <td>Active</td>
+                                <td>OKWI TOM</td>
+                                <td>0701234567</td>
+                                <td>1</td>
+                                <td>10-JAN-2026</td>
+                                <td><span class="status-badge active">Active</span></td>
                                 <td class="action-cell">
-                                    <a href="#" class="action-icon view" aria-label="View customer"><i class="fa-solid fa-eye"></i></a>
-                                    <a href="#" class="action-icon edit" aria-label="Edit customer"><i class="fa-solid fa-pen"></i></a>
-                                    <a href="#" class="action-icon delete" aria-label="Delete customer"><i class="fa-solid fa-trash"></i></a>
+                                    <a href="#" class="action-icon view"><i class="fa-solid fa-eye"></i></a>
+                                    <a href="#" class="action-icon edit"><i class="fa-solid fa-pen"></i></a>
+                                    <a href="#" class="action-icon delete"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                             </tr>
                         </tbody>

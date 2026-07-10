@@ -36,7 +36,12 @@ body {
     align-items: center;
     gap: 15px;
 }
-
+.nav-left img {
+    width: 100px;
+    height: auto;
+    object-fit: contain;
+}
+/* 
 .nav-left img {
     width: 50px;
     height: 50px;
@@ -45,7 +50,7 @@ body {
 
 .company-info h2 {
     font-size: 1.15rem;
-}
+} */
 
 .nav-right {
     display: flex;
@@ -490,4 +495,29 @@ body {
     .page-header h1 {
         font-size: 1.45rem;
     }
+}
+
+/* Form validation states */
+.input-error {
+    border-color: #dc2626 !important;
+    background-color: #fef2f2;
+}
+
+.error-message {
+    display: block;
+    color: #dc2626;
+    font-size: 0.8rem;
+    margin-top: 4px;
+    margin-bottom: 6px;
+}
+
+.form-success {
+    display: none;
+    color: #15803d;
+    background-color: #f0fdf4;
+    border: 1px solid #86efac;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-top: 12px;
+    font-size: 0.9rem;
 }

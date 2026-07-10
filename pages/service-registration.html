@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Management</title>
+
+    <link rel="stylesheet" href="../css/service-registration.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <section class="nav-bar">
+
+        <div class="nav-left">
+            <img src="../images/service-logo.png" alt="Oyera Auto Service Bay Logo">
+        </div>
+
+        <div class="search-input nav">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="nav-right">
+
+            <div class="icon-notifications">
+                <a href="#"><i class="fa-solid fa-bell"></i></a>
+            </div>
+
+            <div class="icon-settings">
+                <a href="#"><i class="fa-solid fa-gear"></i></a>
+            </div>
+
+            <div class="user-menu">
+
+                <div class="user-profile">
+                    <a href="#"><i class="fa-solid fa-user"></i></a>
+                </div>
+
+                <span class="username">John</span>
+
+                <button class="menu-btn">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="dropdown">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MAIN LAYOUT ================= -->
+
+    <div class="main-container">
+
+        <!-- Sidebar -->
+
+        <aside class="side-bar">
+
+            <ul class="sidebar-menu">
+
+                <li><a href="../index.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+
+                <li><a href="customers.html"><i class="fa-solid fa-users"></i> Customers</a></li>
+
+                <li><a href="customer-display.html"><i class="fa-solid fa-address-book"></i> Customer Display</a></li>
+
+                <li><a href="vehicles.html"><i class="fa-solid fa-car"></i> Vehicles</a></li>
+
+                <li><a href="services.html"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a>
+                </li>
+                
+                 <li><a href="service-registration.html" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Service Registration</a>
+                </li>
+
+                <li><a href="technicians.html"><i class="fa-solid fa-user-gear"></i> Technicians</a></li>
+
+                <li><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
+
+                <li><a href="invoices.html"><i class="fa-solid fa-file-invoice"></i>Payments</a></li>
+
+                <li><a href="reports.html"><i class="fa-solid fa-chart-pie"></i> Reports</a></li>
+
+                <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+
+                <li><a href="logout.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+
+            </ul>
+
+        </aside>
+
+
+
+
+
+        <main class="content">
+
+            <div class="services-page">
+
+                <header class="page-header">
+
+                    <div>
+                        <h1>Service Registration</h1>
+                        <p>Register a new vehicle service.</p>
+                    </div>
+
+                </header>
+
+
+                <form class="service-registration-form" action="#" method="post" novalidate>
+
+                    <div class="services-stats">
+
+                        <section class="services-records" style="grid-column: span 3; margin-bottom: 0;">
+
+                            <div class="records-header">
+
+                                <div class="header">
+                                    <h2>Customer, Vehicle & Service Selection</h2>
+                                    <p>Select the customer visit details and assign services and technicians.</p>
+                                </div>
+
+                            </div>
+
+                            <div class="registration-grid"
+                                style="display: grid; grid-template-columns: repeat(2, minmax(220px, 1fr)); gap: 14px;">
+
+                                <div>
+                                    <label for="customer"><strong>Customer</strong></label>
+                                    <select id="customer" name="customer"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                        <option value="">Select customer</option>
+                                        <option value="c001">Michael Okello</option>
+                                        <option value="c002">Grace Namatovu</option>
+                                        <option value="c003">Daniel Ouma</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="vehicle"><strong>Vehicle</strong></label>
+                                    <select id="vehicle" name="vehicle"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                        <option value="">Select vehicle (for selected customer)</option>
+                                        <option value="v001">UBK 214K - Toyota Premio</option>
+                                        <option value="v002">UBA 781D - Nissan X-Trail</option>
+                                        <option value="v003">UBG 455M - Subaru Forester</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                            <div
+                                style="display: grid; grid-template-columns: repeat(2, minmax(260px, 1fr)); gap: 18px; margin-top: 18px;">
+
+                                <fieldset style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px;">
+                                    <legend><strong>Services Required</strong></legend>
+
+                                    <div style="display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 6px;">
+                                        <label><input type="checkbox" name="services" value="engine-oil-change"> Engine
+                                            Oil Change</label>
+                                        <label><input type="checkbox" name="services"
+                                                value="engine-oil-filter-replacement"> Engine Oil Filter
+                                            Replacement</label>
+                                        <label><input type="checkbox" name="services" value="gearbox-oil-change">
+                                            Gearbox Oil Change</label>
+                                        <label><input type="checkbox" name="services"
+                                                value="gearbox-filter-replacement"> Gearbox Filter Replacement</label>
+                                        <label><input type="checkbox" name="services" value="brake-fluid-replacement">
+                                            Brake Fluid Replacement</label>
+                                        <label><input type="checkbox" name="services" value="brake-pad-replacement">
+                                            Brake Pad Replacement</label>
+                                        <label><input type="checkbox" name="services" value="greasing"> Greasing</label>
+                                        <label><input type="checkbox" name="services" value="wheel-alignment"> Wheel
+                                            Alignment</label>
+                                        <label><input type="checkbox" name="services" value="wheel-balancing"> Wheel
+                                            Balancing</label>
+                                        <label><input type="checkbox" name="services" value="minor-repairs"> Minor
+                                            Repairs</label>
+                                    </div>
+
+                                </fieldset>
+
+                                <fieldset style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px;">
+                                    <legend><strong>Technicians Assigned</strong></legend>
+
+                                    <div style="display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 6px;">
+                                        <label><input type="checkbox" name="technicians" value="james"> James</label>
+                                        <label><input type="checkbox" name="technicians" value="peter"> Peter</label>
+                                        <label><input type="checkbox" name="technicians" value="sarah"> Sarah</label>
+                                        <label><input type="checkbox" name="technicians" value="david"> David</label>
+                                    </div>
+
+                                </fieldset>
+
+                            </div>
+
+                        </section>
+
+
+                        <section class="services-records" style="grid-column: span 3; margin-bottom: 0;">
+
+                            <div class="records-header">
+
+                                <div class="header">
+                                    <h2>Parts &amp; Oils Required</h2>
+                                    <p>Select inventory items and required quantity for this service visit.</p>
+                                </div>
+
+                            </div>
+
+                            <div class="registration-grid"
+                                style="display: grid; grid-template-columns: repeat(3, minmax(180px, 1fr)); gap: 14px;">
+
+                                <div>
+                                    <label for="engine-oil"><strong>Engine Oil</strong></label>
+                                    <select id="engine-oil" name="engine-oil"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                        <option value="">Select from inventory</option>
+                                        <option value="shell-5w30">Shell Helix 5W30</option>
+                                        <option value="total-10w40">Total Quartz 10W40</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="oil-filter"><strong>Oil Filter</strong></label>
+                                    <select id="oil-filter" name="oil-filter"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                        <option value="">Select from inventory</option>
+                                        <option value="toyota-filter">Toyota Oil Filter</option>
+                                        <option value="mazda-filter">Mazda Oil Filter</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="gearbox-oil"><strong>Gearbox Oil</strong></label>
+                                    <select id="gearbox-oil" name="gearbox-oil"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                        <option value="">Select from inventory</option>
+                                        <option value="atf-dexron">ATF Dexron III</option>
+                                        <option value="mtf-75w90">MTF 75W90</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="gearbox-filter"><strong>Gearbox Filter</strong></label>
+                                    <select id="gearbox-filter" name="gearbox-filter"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                        <option value="">Select from inventory</option>
+                                        <option value="auto-filter-a">Automatic Filter A</option>
+                                        <option value="auto-filter-b">Automatic Filter B</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="brake-fluid"><strong>Brake Fluid</strong></label>
+                                    <select id="brake-fluid" name="brake-fluid"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                        <option value="">Select from inventory</option>
+                                        <option value="dot3">DOT 3</option>
+                                        <option value="dot4">DOT 4</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="brake-pads"><strong>Brake Pads</strong></label>
+                                    <select id="brake-pads" name="brake-pads"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                        <option value="">Select from inventory</option>
+                                        <option value="ceramic-front">Ceramic Front Pads</option>
+                                        <option value="semi-metallic-rear">Semi-Metallic Rear Pads</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="parts-quantity"><strong>Quantity</strong></label>
+                                    <input id="parts-quantity" name="parts-quantity" type="number" min="1"
+                                        placeholder="Enter quantity"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        <section class="services-records" style="grid-column: span 3; margin-bottom: 0;">
+
+                            <div class="records-header">
+
+                                <div class="header">
+                                    <h2>Service Information</h2>
+                                    <p>Capture the operational details for the current service visit.</p>
+                                </div>
+
+                            </div>
+
+                            <div class="registration-grid"
+                                style="display: grid; grid-template-columns: repeat(3, minmax(180px, 1fr)); gap: 14px;">
+
+                                <div>
+                                    <label for="service-id"><strong>Service ID</strong></label>
+                                    <input id="service-id" name="service-id" type="text" value="SRV-20260627-001"
+                                        readonly
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px; background: #f8fafc;">
+                                </div>
+
+                                <div>
+                                    <label for="service-date"><strong>Service Date</strong></label>
+                                    <input id="service-date" name="service-date" type="date"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                </div>
+
+                                <div>
+                                    <label for="service-bay"><strong>Service Bay</strong></label>
+                                    <select id="service-bay" name="service-bay"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                        <option value="">Select bay</option>
+                                        <option value="bay-a">Bay A</option>
+                                        <option value="bay-b">Bay B</option>
+                                        <option value="bay-c">Bay C</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="senior-technician"><strong>Senior Technician</strong></label>
+                                    <select id="senior-technician" name="senior-technician"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                        <option value="">Select technician</option>
+                                        <option value="james">James</option>
+                                        <option value="peter">Peter</option>
+                                        <option value="sarah">Sarah</option>
+                                        <option value="david">David</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="service-status"><strong>Service Status</strong></label>
+                                    <select id="service-status" name="service-status"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                        <option value="pending">Pending</option>
+                                        <option value="in-progress">In Progress</option>
+                                        <option value="completed">Completed</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="priority"><strong>Priority</strong></label>
+                                    <select id="priority" name="priority"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                        <option value="normal">Normal</option>
+                                        <option value="urgent">Urgent</option>
+                                        <option value="emergency">Emergency</option>
+                                    </select>
+                                </div>
+
+                                <div style="grid-column: span 3;">
+                                    <label for="remarks"><strong>Remarks</strong></label>
+                                    <textarea id="remarks" name="remarks" rows="4"
+                                        placeholder="Additional technician notes..."
+                                        style="width: 100%; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 10px;"></textarea>
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        <section class="services-records" style="grid-column: span 3; margin-bottom: 0;">
+
+                            <div class="records-header">
+
+                                <div class="header">
+                                    <h2>Charges &amp; Payment</h2>
+                                    <p>Review labour and estimated totals before confirming payment status.</p>
+                                </div>
+
+                            </div>
+
+                            <div class="registration-grid"
+                                style="display: grid; grid-template-columns: repeat(2, minmax(220px, 1fr)); gap: 14px;">
+
+                                <div>
+                                    <label for="labour-charge"><strong>Labour Charge</strong></label>
+                                    <input id="labour-charge" name="labour-charge" type="text" value="UGX 20,000"
+                                        readonly
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px; background: #f8fafc; font-weight: 600;">
+                                </div>
+
+                                <div>
+                                    <label for="estimated-parts-total"><strong>Estimated Parts Total</strong></label>
+                                    <input id="estimated-parts-total" name="estimated-parts-total" type="number" min="0"
+                                        placeholder="Enter amount"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                </div>
+
+                                <div>
+                                    <label for="estimated-grand-total"><strong>Estimated Grand Total</strong></label>
+                                    <input id="estimated-grand-total" name="estimated-grand-total" type="number" min="0"
+                                        placeholder="Auto/Manual total"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                </div>
+
+                                <div>
+                                    <label for="payment-status"><strong>Payment Status</strong></label>
+                                    <select id="payment-status" name="payment-status"
+                                        style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
+                                        <option value="unpaid">Unpaid</option>
+                                        <option value="partial">Partial</option>
+                                        <option value="paid">Paid</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </section>
+
+
+                        <aside class="services-records"
+                            style="grid-column: span 1; margin-bottom: 0; align-self: start;">
+
+                            <div class="header" style="margin-bottom: 14px;">
+                                <h2>Service Summary</h2>
+                                <p>Quick summary for this registration.</p>
+                            </div>
+
+                            <div style="display: grid; gap: 12px;">
+                                <div style="display: flex; justify-content: space-between; gap: 10px;">
+                                    <span>Customer</span>
+                                    <strong>Not selected</strong>
+                                </div>
+
+                                <div style="display: flex; justify-content: space-between; gap: 10px;">
+                                    <span>Vehicle</span>
+                                    <strong>Not selected</strong>
+                                </div>
+
+                                <div style="display: flex; justify-content: space-between; gap: 10px;">
+                                    <span>Services Selected</span>
+                                    <strong>0</strong>
+                                </div>
+
+                                <div style="display: flex; justify-content: space-between; gap: 10px;">
+                                    <span>Technicians Assigned</span>
+                                    <strong>0</strong>
+                                </div>
+
+                                <div style="display: flex; justify-content: space-between; gap: 10px;">
+                                    <span>Labour</span>
+                                    <strong>UGX 20,000</strong>
+                                </div>
+
+                                <div style="display: flex; justify-content: space-between; gap: 10px;">
+                                    <span>Estimated Total</span>
+                                    <strong>UGX 0</strong>
+                                </div>
+
+                                <div
+                                    style="display: flex; justify-content: space-between; gap: 10px; align-items: center;">
+                                    <span>Payment Status</span>
+                                    <span class="status-badge inactive">Unpaid</span>
+                                </div>
+                            </div>
+
+                        </aside>
+
+                    </div>
+
+
+                    <div class="services-records" style="margin-bottom: 0;">
+
+                        <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end;">
+                            <button type="submit"
+                                style="background-color: #2563eb; color: #fff; padding: 12px 20px; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer;">Register
+                                Service</button>
+                            <button type="reset"
+                                style="background-color: #e5e7eb; color: #1f2937; padding: 12px 20px; border: none; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer;">Reset
+                                Form</button>
+                            <button type="button"
+                                style="background-color: #fff; color: #374151; padding: 12px 20px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 15px; font-weight: 600; cursor: pointer;">Cancel</button>
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </main>
+    </div>
+    <script src="../js/validation.js"></script>
+    <script src="../js/service-registration.js"></script>
+</body>
+
+</html>

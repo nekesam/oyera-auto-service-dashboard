@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Management</title>
+
+    <link rel="stylesheet" href="../css/services.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <section class="nav-bar">
+
+        <div class="nav-left">
+            <img src="../images/service-logo.png" alt="Oyera Auto Service Bay Logo">
+        </div>
+
+        <div class="search-input nav">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search...">
+        </div>
+
+        <div class="nav-right">
+
+            <div class="icon-notifications">
+                <a href="#"><i class="fa-solid fa-bell"></i></a>
+            </div>
+
+            <div class="icon-settings">
+                <a href="#"><i class="fa-solid fa-gear"></i></a>
+            </div>
+
+            <div class="user-menu">
+
+                <div class="user-profile">
+                    <a href="#"><i class="fa-solid fa-user"></i></a>
+                </div>
+
+                <span class="username">John</span>
+
+                <button class="menu-btn">
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="dropdown">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MAIN LAYOUT ================= -->
+
+    <div class="main-container">
+
+        <!-- Sidebar -->
+
+        <aside class="side-bar">
+
+            <ul class="sidebar-menu">
+
+                <li><a href="../index.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+
+                <li><a href="customers.html"><i class="fa-solid fa-users"></i> Customers</a></li>
+
+                <li><a href="customer-display.html"><i class="fa-solid fa-address-book"></i> Customer Display</a></li>
+
+                <li><a href="vehicles.html"><i class="fa-solid fa-car"></i> Vehicles</a></li>
+
+                <li><a href="services.html" class="active"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a></li>
+                <li><a href="service-registration.html"><i class="fa-solid fa-screwdriver-wrench"></i> Service Registration</a>
+                </li>
+
+                <li><a href="technicians.html"><i class="fa-solid fa-user-gear"></i> Technicians</a></li>
+
+                <li><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
+
+                <li><a href="invoices.html"><i class="fa-solid fa-file-invoice"></i>Payments</a></li>
+
+                <li><a href="reports.html"><i class="fa-solid fa-chart-pie"></i> Reports</a></li>
+
+                <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+
+                <li><a href="logout.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+
+            </ul>
+
+        </aside>
+
+
+
+        <!-- ================= CONTENT ================= -->
+
+        <main class="content">
+
+            <div class="services-page">
+
+                <!-- PAGE HEADER -->
+
+                <header class="page-header">
+
+                    <div>
+                        <h1>Services Management</h1>
+                        <p>Manage the list of services offered by Oyera Auto Service Bay.</p>
+                    </div>
+
+                    <div>
+                        <button>+ Add New Service</button>
+                    </div>
+
+                </header>
+
+
+
+                <!-- ================= STATISTICS ================= -->
+
+                <section class="services-stats">
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon total">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+
+                        <div class="stat-content">
+                            <p class="stat-title">Total Services</p>
+                            <h2>9</h2>
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon active">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div class="stat-content">
+                            <p class="stat-title">Active Services</p>
+                            <h2>9</h2>
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon new">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+
+                        <div class="stat-content">
+                            <p class="stat-title">Most Requested</p>
+                            <h2>Engine Oil Change</h2>
+                        </div>
+
+                    </article>
+
+
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon vehicles">
+                            <i class="fa-solid fa-layer-group"></i>
+                        </div>
+
+                        <div class="stat-content">
+                            <p class="stat-title">Service Categories</p>
+                            <h2>5</h2>
+                        </div>
+
+                    </article>
+
+                </section>
+
+
+
+                <!-- ================= SERVICES TABLE ================= -->
+
+                <section class="services-records">
+
+                    <div class="records-header">
+
+                        <div class="header">
+
+                            <h2>Available Services</h2>
+
+                            <p>View, search and manage all services provided by the service bay.</p>
+
+                        </div>
+
+                        <div class="search-input">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                            <input type="text" placeholder="Search services...">
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="table-wrapper">
+
+                        <table class="records-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>Service ID</th>
+
+                                    <th>Service Name</th>
+
+                                    <th>Category</th>
+
+                                    <th>Standard Price (UGX)</th>
+
+                                    <th>Estimated Duration</th>
+
+                                    <th>Status</th>
+
+                                    <th>Actions</th>
+
+                                </tr>
+
+                            </thead>
+
+
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>S001</td>
+
+                                    <td>Engine Oil Change</td>
+
+                                    <td>Lubrication</td>
+
+                                    <td>79,000 - 200,000</td>
+
+                                    <td>30 Minutes</td>
+
+                                    <td><span class="status-badge active">Active</span></td>
+
+                                    <td class="action-cell">
+
+                                        <a href="#" class="action-icon edit">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+
+                                        <a href="#" class="action-icon delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr>
+
+                                    <td>S002</td>
+
+                                    <td>Engine Oil Filter Replacement</td>
+
+                                    <td>Filters</td>
+
+                                    <td>15,000 - 20,000</td>
+
+                                    <td>15 Minutes</td>
+
+                                    <td><span class="status-badge active">Active</span></td>
+
+                                    <td class="action-cell">
+
+                                        <a href="#" class="action-icon edit">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+
+                                        <a href="#" class="action-icon delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr>
+
+                                    <td>S003</td>
+
+                                    <td>Gearbox Oil Change</td>
+
+                                    <td>Lubrication</td>
+
+                                    <td>79,000 - 200,000</td>
+
+                                    <td>40 Minutes</td>
+
+                                    <td><span class="status-badge active">Active</span></td>
+
+                                    <td class="action-cell">
+
+                                        <a href="#" class="action-icon edit">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+
+                                        <a href="#" class="action-icon delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr>
+
+                                    <td>S004</td>
+
+                                    <td>Gearbox Filter Replacement</td>
+
+                                    <td>Filters</td>
+
+                                    <td>15,000 - 20,000</td>
+
+                                    <td>20 Minutes</td>
+
+                                    <td><span class="status-badge active">Active</span></td>
+
+                                    <td class="action-cell">
+
+                                        <a href="#" class="action-icon edit">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+
+                                        <a href="#" class="action-icon delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr>
+
+                                    <td>S005</td>
+
+                                    <td>Brake Fluid Replacement</td>
+
+                                    <td>Fluids</td>
+
+                                    <td>13,000 - 20,000</td>
+
+                                    <td>20 Minutes</td>
+
+                                    <td><span class="status-badge active">Active</span></td>
+
+                                    <td class="action-cell">
+
+                                        <a href="#" class="action-icon edit">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+
+                                        <a href="#" class="action-icon delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr>
+
+                                    <td>S006</td>
+
+                                    <td>Brake Pad Replacement</td>
+
+                                    <td>Repairs</td>
+
+                                    <td>Varies</td>
+
+                                    <td>45 Minutes</td>
+
+                                    <td><span class="status-badge active">Active</span></td>
+
+                                    <td class="action-cell">
+
+                                        <a href="#" class="action-icon edit">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+
+                                        <a href="#" class="action-icon delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr>
+
+                                    <td>S007</td>
+
+                                    <td>Greasing</td>
+
+                                    <td>Lubrication</td>
+
+                                    <td>Varies</td>
+
+                                    <td>20 Minutes</td>
+
+                                    <td><span class="status-badge active">Active</span></td>
+
+                                    <td class="action-cell">
+
+                                        <a href="#" class="action-icon edit">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+
+                                        <a href="#" class="action-icon delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr>
+
+                                    <td>S008</td>
+
+                                    <td>Wheel Alignment</td>
+
+                                    <td>Wheel Service</td>
+
+                                    <td>30,000</td>
+
+                                    <td>45 Minutes</td>
+
+                                    <td><span class="status-badge active">Active</span></td>
+
+                                    <td class="action-cell">
+
+                                        <a href="#" class="action-icon edit">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+
+                                        <a href="#" class="action-icon delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+
+
+                                <tr>
+
+                                    <td>S009</td>
+
+                                    <td>Wheel Balancing</td>
+
+                                    <td>Wheel Service</td>
+
+                                    <td>20,000</td>
+
+                                    <td>30 Minutes</td>
+
+                                    <td><span class="status-badge active">Active</span></td>
+
+                                    <td class="action-cell">
+
+                                        <a href="#" class="action-icon edit">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </a>
+
+                                        <a href="#" class="action-icon delete">
+                                            <i class="fa-solid fa-trash"></i>
+                                        </a>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>

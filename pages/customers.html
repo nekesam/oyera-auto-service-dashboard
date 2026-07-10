@@ -14,9 +14,9 @@
 
         <!-- LEFT SIDE -->
         <div class="nav-left">
-            <img src="../images/logo.svg" alt="Company-Logo">
+            <img src="../images/service-logo.png" alt="Company-Logo">
             <div class="company-info">
-                <h2>Oyera Auto Service Bay Ltd.</h2>
+                <!-- <h2>Oyera Auto Service Bay Ltd.</h2> -->
             </div>
 
         </div>
@@ -58,9 +58,11 @@
                 <li><a href="customer-display.html"><i class="fas fa-address-book"></i></i> Customer Display</a></li>
                 <li><a href="vehicles.html"><i class="fa-solid fa-car"></i> Vehicles</a></li>
                 <li><a href="services.html"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a></li>
+                <li><a href="service-registration.html"><i class="fa-solid fa-screwdriver-wrench"></i> Service Registration</a>
+                </li>
                 <li><a href="technicians.html"><i class="fa-solid fa-user-gear"></i> Technicians</a></li>
                 <li><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
-                <li><a href="invoices.html"><i class="fa-solid fa-file-invoice"></i> Invoices</a></li>
+                <li><a href="invoices.html"><i class="fa-solid fa-file-invoice"></i> Payments</a></li>
                 <li><a href="reports.html"><i class="fa-solid fa-chart-pie"></i> Reports</a></li>
                 <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
@@ -71,15 +73,17 @@
             <!-- HEADER -->
             <section class="customer-header">
                     <h3>Customer Registration</h3>
-                    <p>Manage customer records</p>
+                    <p>
+                        Register customers who can own one or more vehicles.
+                    </p>
             </section>
 
             <!-- CUSTOMER REGISTRATION FORM -->
             <section class="customer-registration">
-                <form action="#" method="post" class="customer-form">
+                <form action="#" method="post" class="customer-form" novalidate>
                     <div class="form-group">
                         <label for="customer-id">Customer ID</label>
-                        <input type="text" id="customer-id" name="customer-id" readonly>
+                        <input type="text" id="customer-id" name="customer-id" value="C004" readonly>
                     </div>
                     <div class="form-group">
                         <label for="first-name">First Name</label>
@@ -117,7 +121,7 @@
             
                     <div class="search-container">
                         <i class="fas fa-search"></i>
-                        <input type="text" placeholder="Search customer...">
+                        <input type="text" placeholder="Search by customer ID, Name or Phone...">
                     </div>
                 </div>
             
@@ -125,56 +129,99 @@
             
                     <thead>
                         <tr>
+                    
                             <th>Customer ID</th>
-                            <th>Full Name</th>
+                    
+                            <th>Customer Name</th>
+                    
                             <th>Phone Number</th>
-                            <th>Email Address</th>
-                            <th>Address</th>
+                    
+                            <th>Vehicles Owned</th>
+                    
+                            <th>Status</th>
+                    
                             <th>Actions</th>
+                    
                         </tr>
                     </thead>
-            
+
                     <tbody>
-            
+                    
                         <tr>
                             <td>C001</td>
                             <td>John Doe</td>
                             <td>0700000000</td>
-                            <td>john@example.com</td>
-                            <td>Kampala</td>
+                            <td>2</td>
+                            <td>
+                                <span class="status-badge active">Active</span>
+                            </td>
                             <td>
                                 <i class="fas fa-eye" title="View"></i>
                                 <i class="fas fa-pen" title="Edit"></i>
                                 <i class="fas fa-trash" title="Delete"></i>
                             </td>
                         </tr>
-            
+                    
                         <tr>
                             <td>C002</td>
                             <td>Mary Namusoke</td>
                             <td>0780000000</td>
-                            <td>mary@example.com</td>
-                            <td>Entebbe</td>
+                            <td>1</td>
+                            <td>
+                                <span class="status-badge active">Active</span>
+                            </td>
                             <td>
                                 <i class="fas fa-eye" title="View"></i>
                                 <i class="fas fa-pen" title="Edit"></i>
                                 <i class="fas fa-trash" title="Delete"></i>
                             </td>
                         </tr>
-            
+                    
                         <tr>
                             <td>C003</td>
                             <td>Peter Okello</td>
                             <td>0750000000</td>
-                            <td>peter@example.com</td>
-                            <td>Wakiso</td>
+                            <td>3</td>
+                            <td>
+                                <span class="status-badge inactive">Inactive</span>
+                            </td>
                             <td>
                                 <i class="fas fa-eye" title="View"></i>
                                 <i class="fas fa-pen" title="Edit"></i>
                                 <i class="fas fa-trash" title="Delete"></i>
                             </td>
                         </tr>
-            
+                    
+                        <tr>
+                            <td>C004</td>
+                            <td>Sarah Achieng</td>
+                            <td>0771234567</td>
+                            <td>2</td>
+                            <td>
+                                <span class="status-badge active">Active</span>
+                            </td>
+                            <td>
+                                <i class="fas fa-eye" title="View"></i>
+                                <i class="fas fa-pen" title="Edit"></i>
+                                <i class="fas fa-trash" title="Delete"></i>
+                            </td>
+                        </tr>
+                    
+                        <tr>
+                            <td>C005</td>
+                            <td>David Okello</td>
+                            <td>0759876543</td>
+                            <td>1</td>
+                            <td>
+                                <span class="status-badge active">Active</span>
+                            </td>
+                            <td>
+                                <i class="fas fa-eye" title="View"></i>
+                                <i class="fas fa-pen" title="Edit"></i>
+                                <i class="fas fa-trash" title="Delete"></i>
+                            </td>
+                        </tr>
+                    
                     </tbody>
             
                 </table>
@@ -182,6 +229,8 @@
             </section>
         </main>
     </div>
+    <script src="../js/validation.js"></script>
+    <script src="../js/customers.js"></script>
 </body>
 
 </html>
