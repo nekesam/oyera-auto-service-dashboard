@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <link rel="stylesheet" href="../css/vehicles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <section class="nav-bar">
+        <div class="nav-left">
+            <img src="../images/service-logo.png" alt="Company-Logo">
+            <div class="company-info"></div>
+        </div>
+
+        <div class="nav-right">
+            <div class="icon-notifications">
+                <a href="#"><i class="fa-solid fa-bell"></i></a>
+            </div>
+            <div class="icon-settings">
+                <a href="#"><i class="fa-solid fa-gear"></i></a>
+            </div>
+            <div class="user-menu">
+                <div class="user-profile">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                </div>
+                <span class="username">John</span>
+                <button class="menu-btn">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="logout.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <aside class="side-bar">
+            <ul class="sidebar-menu">
+                <li><a href="../index.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="customers.html"><i class="fa-solid fa-users"></i> Customers</a></li>
+                <li><a href="customer-display.html"><i class="fas fa-address-book"></i> Customer Display</a></li>
+                <li><a href="vehicles.html"><i class="fa-solid fa-car"></i> Vehicles</a></li>
+                <li><a href="services.html"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a></li>
+                <li><a href="service-registration.html"><i class="fa-solid fa-screwdriver-wrench"></i> Service Registration</a>
+                </li>
+                <li><a href="technicians.html"><i class="fa-solid fa-user-gear"></i> Technicians</a></li>
+                <li><a href="inventory.html" class="active"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
+                <li><a href="invoices.html"><i class="fa-solid fa-file-invoice"></i> Payments</a></li>
+                <li><a href="reports.html"><i class="fa-solid fa-chart-pie"></i> Reports</a></li>
+                <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <div class="vehicles-page">
+                <header class="page-header">
+                    <h1>Inventory</h1>
+                    <p>Track parts and oils in stock for servicing vehicles.</p>
+                </header>
+
+                <section class="vehicle-stats" aria-label="Inventory statistics">
+                    <article class="stat-card">
+                        <div class="stat-icon total">
+                            <i class="fas fa-boxes-stacked" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Total Items</p>
+                            <h2 id="statTotalItems">0</h2>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon serviced">
+                            <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Categories</p>
+                            <h2 id="statCategories">0</h2>
+                        </div>
+                    </article>
+
+                    <article class="stat-card">
+                        <div class="stat-icon awaiting">
+                            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+                        </div>
+                        <div class="stat-content">
+                            <p class="stat-title">Low Stock Items</p>
+                            <h2 id="statLowStock">0</h2>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="dashboard-card registration-card" aria-labelledby="inventory-form-title">
+                    <div class="card-header">
+                        <h2 id="inventory-form-title">Add Inventory Item</h2>
+                        <p>Record newly stocked parts and oils.</p>
+                    </div>
+
+                    <form class="inventory-form vehicle-form" novalidate>
+                        <div class="form-group">
+                            <label for="item-name">Item Name</label>
+                            <input type="text" id="item-name" name="item-name" placeholder="Shell Helix 5W30" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="item-category">Category</label>
+                            <input type="text" id="item-category" name="item-category" placeholder="Engine Oil" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="item-quantity">Quantity</label>
+                            <input type="number" id="item-quantity" name="item-quantity" min="0" placeholder="20" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="item-unit">Unit</label>
+                            <input type="text" id="item-unit" name="item-unit" placeholder="litres" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="item-reorder">Reorder Level</label>
+                            <input type="number" id="item-reorder" name="item-reorder" min="0" placeholder="10" required>
+                        </div>
+
+                        <button type="submit" class="primary-btn">Add Item</button>
+                    </form>
+                </section>
+
+                <section class="dashboard-card" aria-labelledby="inventory-records-title">
+                    <div class="records-head">
+                        <h2 id="inventory-records-title">Inventory Records</h2>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="records-table">
+                            <thead>
+                                <tr>
+                                    <th>Item ID</th>
+                                    <th>Name</th>
+                                    <th>Category</th>
+                                    <th>Quantity</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="inventoryTableBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="../js/validation.js"></script>
+    <script src="../js/store.js"></script>
+    <script src="../js/inventory.js"></script>
+</body>
+
+</html>

@@ -38,9 +38,9 @@
                 </button>
             
                 <div class="dropdown">
-                    <a href="profile.html">Profile</a>
-                    <a href="settings.html">Settings</a>
-                    <a href="logout.html">Logout</a>
+                    <a href="pages/profile.html">Profile</a>
+                    <a href="pages/settings.html">Settings</a>
+                    <a href="pages/logout.html">Logout</a>
                 </div>
             </div>
             
@@ -54,10 +54,10 @@
             <ul class="sidebar-menu">
                 <li><a href="index.html" class="active"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
                 <li><a href="pages/customers.html"><i class="fa-solid fa-users"></i> Customers</a></li>
-                <li><a href="customer-display.html"><i class="fas fa-address-book"></i></i> Customer Display</a></li>
+                <li><a href="pages/customer-display.html"><i class="fas fa-address-book"></i></i> Customer Display</a></li>
                 <li><a href="pages/vehicles.html"><i class="fa-solid fa-car"></i> Vehicles</a></li>
                 <li><a href="pages/services.html"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a></li>
-                <li><a href="service-registration.html"><i class="fa-solid fa-screwdriver-wrench"></i> Service Registration</a>
+                <li><a href="pages/service-registration.html"><i class="fa-solid fa-screwdriver-wrench"></i> Service Registration</a>
                 </li>
                 <li><a href="pages/technicians.html"><i class="fa-solid fa-user-gear"></i> Technicians</a></li>
                 <li><a href="pages/inventory.html"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
@@ -84,60 +84,61 @@
                         </div>
                         <div class="card-content">
                             <p class="card-title">Cars Today</p>
-                            <h2>12</h2>
+                            <h2 id="statCarsToday">0</h2>
                         </div>
                     </article>
-        
+
                     <article class="stat-card">
                         <div class="stat-icon revenue">
                             <i class="fas fa-coins" aria-hidden="true"></i>
                         </div>
                         <div class="card-content">
                             <p class="card-title">Today's Revenue</p>
-                            <h2>UGX 1,000,000</h2>
+                            <h2 id="statRevenue">UGX 0</h2>
                         </div>
                     </article>
-        
+
                     <article class="stat-card">
                         <div class="stat-icon active-jobs">
                             <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
                         </div>
                         <div class="card-content">
                             <p class="card-title">Active Jobs</p>
-                            <h2>5</h2>
+                            <h2 id="statActiveJobs">0</h2>
                         </div>
                     </article>
-        
+
                     <article class="stat-card">
                         <div class="stat-icon parts-sold">
                             <i class="fas fa-boxes-stacked" aria-hidden="true"></i>
                         </div>
                         <div class="card-content">
                             <p class="card-title">Parts Sold</p>
-                            <h2>20</h2>
+                            <h2 id="statPartsSold">0</h2>
                         </div>
                     </article>
                 </section>
-        
-                <!-- SERVICE INTAKE FORM (UI ONLY) -->
+
+                <!-- SERVICE INTAKE FORM -->
                 <section class="form-section">
                     <h2>New Service Entry</h2>
-        
-                    <form class="service-form">
-                        <input type="text" placeholder="Car Type (e.g. Toyota Hilux)">
-        
-                        <select>
+
+                    <form class="service-form" id="quickServiceForm" novalidate>
+                        <input type="text" id="quickCarType" placeholder="Car Type (e.g. Toyota Hilux)">
+
+                        <select id="quickServiceType">
+                            <option value="">Select a service</option>
                             <option>Engine Oil Change</option>
                             <option>Brake Pads</option>
                             <option>Wheel Alignment</option>
                             <option>Wheel Balancing</option>
                         </select>
-        
-                        <input type="text" placeholder="Assigned Technician">
-        
-                        <input type="text" placeholder="Parts Required">
-        
-                        <button type="button">Register Job</button>
+
+                        <input type="text" id="quickTechnician" placeholder="Assigned Technician">
+
+                        <input type="text" id="quickParts" placeholder="Parts Required">
+
+                        <button type="submit">Register Job</button>
                     </form>
                 </section>
         
@@ -174,25 +175,15 @@
                 </section>
         
                 <!-- ACTIVE JOBS -->
-                <section class="jobs">
+                <section class="jobs" id="activeJobsList">
                     <h2>Active Service Jobs</h2>
-        
-                    <div class="job-card">
-                        <p><strong>Car:</strong> Toyota Hiace</p>
-                        <p><strong>Technician:</strong> John</p>
-                        <p><strong>Service:</strong> Brake Pads + Oil Change</p>
-                    </div>
-        
-                    <div class="job-card">
-                        <p><strong>Car:</strong> Isuzu Truck</p>
-                        <p><strong>Technician:</strong> Sarah</p>
-                        <p><strong>Service:</strong> Wheel Alignment</p>
-                    </div>
                 </section>
             </div>
         </main>
         </div>
-        
+        <script src="js/validation.js"></script>
+        <script src="js/store.js"></script>
+        <script src="js/dashboard.js"></script>
         </body>
-        
+
         </html>

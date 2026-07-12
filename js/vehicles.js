@@ -1,6 +1,66 @@
-// Validates the Vehicle Registration form on pages/vehicles.html
+// Validates the Vehicle Registration form and renders the Vehicle
+// Records table and stats on pages/vehicles.html using real stored data.
 
 const vehicleForm = document.querySelector(".vehicle-form");
+const vehicleTableBody = document.getElementById("vehicleTableBody");
+
+const VEHICLE_STATUS_LABEL = {
+    "in-service": "In Service",
+    "completed": "Completed",
+    "pending": "Pending"
+};
+
+function renderVehicleStats() {
+    const store = getStore();
+    const vehicles = store.vehicles;
+
+    const inService = vehicles.filter(function (v) { return v.status === "in-service"; });
+    const pending = vehicles.filter(function (v) { return v.status === "pending"; });
+    const completed = vehicles.filter(function (v) { return v.status === "completed"; });
+
+    document.getElementById("statTotalVehicles").textContent = vehicles.length;
+    document.getElementById("statVehiclesInService").textContent = inService.length;
+    document.getElementById("statVehiclesPending").textContent = pending.length;
+    document.getElementById("statVehiclesCompleted").textContent = completed.length;
+}
+
+function renderVehicleTable() {
+    const store = getStore();
+    vehicleTableBody.innerHTML = "";
+
+    store.vehicles.forEach(function (vehicle) {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${vehicle.id}</td>
+            <td>${vehicle.plate}</td>
+            <td>${vehicle.ownerName}</td>
+            <td>${vehicle.make}</td>
+            <td>${vehicle.model}</td>
+            <td><span class="status-badge ${vehicle.status}">${VEHICLE_STATUS_LABEL[vehicle.status]}</span></td>
+            <td class="action-cell">
+                <a href="#" class="action-icon view" aria-label="View vehicle"><i class="fa-solid fa-eye"></i></a>
+                <a href="#" class="action-icon edit" aria-label="Edit vehicle"><i class="fa-solid fa-pen"></i></a>
+                <a href="#" class="action-icon delete delete-vehicle" aria-label="Delete vehicle" data-id="${vehicle.id}"><i class="fa-solid fa-trash"></i></a>
+            </td>
+        `;
+        vehicleTableBody.appendChild(row);
+    });
+
+    vehicleTableBody.querySelectorAll(".delete-vehicle").forEach(function (icon) {
+        icon.addEventListener("click", function (event) {
+            event.preventDefault();
+            deleteVehicle(icon.dataset.id);
+            renderVehicles();
+        });
+    });
+}
+
+function renderVehicles() {
+    renderVehicleStats();
+    renderVehicleTable();
+}
+
+renderVehicles();
 
 vehicleForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -92,8 +152,23 @@ vehicleForm.addEventListener("submit", function (event) {
         clearError(phoneNumber);
     }
 
-    if (isValid) {
-        showFormSuccess(vehicleForm, "Vehicle registered successfully!");
-        vehicleForm.reset();
+    if (!isValid) {
+        return;
     }
+
+    addVehicle({
+        id: vehicleId.value.trim(),
+        plate: numberPlate.value.trim(),
+        make: vehicleMake.value.trim(),
+        model: vehicleModel.value.trim(),
+        year: Number(year.value),
+        color: color.value.trim(),
+        ownerName: customerName.value.trim(),
+        type: vehicleType.value,
+        phone: phoneNumber.value.trim()
+    });
+
+    showFormSuccess(vehicleForm, "Vehicle registered successfully!");
+    vehicleForm.reset();
+    renderVehicles();
 });

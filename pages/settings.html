@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="../css/vehicles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <section class="nav-bar">
+        <div class="nav-left">
+            <img src="../images/service-logo.png" alt="Company-Logo">
+            <div class="company-info"></div>
+        </div>
+
+        <div class="nav-right">
+            <div class="icon-notifications">
+                <a href="#"><i class="fa-solid fa-bell"></i></a>
+            </div>
+            <div class="icon-settings">
+                <a href="#"><i class="fa-solid fa-gear"></i></a>
+            </div>
+            <div class="user-menu">
+                <div class="user-profile">
+                    <a href="#"><i class="fas fa-user"></i></a>
+                </div>
+                <span class="username">John</span>
+                <button class="menu-btn">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="dropdown">
+                    <a href="profile.html">Profile</a>
+                    <a href="settings.html">Settings</a>
+                    <a href="logout.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <aside class="side-bar">
+            <ul class="sidebar-menu">
+                <li><a href="../index.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a></li>
+                <li><a href="customers.html"><i class="fa-solid fa-users"></i> Customers</a></li>
+                <li><a href="customer-display.html"><i class="fas fa-address-book"></i> Customer Display</a></li>
+                <li><a href="vehicles.html"><i class="fa-solid fa-car"></i> Vehicles</a></li>
+                <li><a href="services.html"><i class="fa-solid fa-screwdriver-wrench"></i> Services</a></li>
+                <li><a href="service-registration.html"><i class="fa-solid fa-screwdriver-wrench"></i> Service Registration</a>
+                </li>
+                <li><a href="technicians.html"><i class="fa-solid fa-user-gear"></i> Technicians</a></li>
+                <li><a href="inventory.html"><i class="fa-solid fa-boxes-stacked"></i> Inventory</a></li>
+                <li><a href="invoices.html"><i class="fa-solid fa-file-invoice"></i> Payments</a></li>
+                <li><a href="reports.html"><i class="fa-solid fa-chart-pie"></i> Reports</a></li>
+                <li><a href="settings.html" class="active"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                <li><a href="logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <main class="content">
+            <div class="vehicles-page">
+                <header class="page-header">
+                    <h1>Settings</h1>
+                    <p>Manage how the dashboard behaves.</p>
+                </header>
+
+                <section class="dashboard-card" style="max-width: 480px;">
+                    <form class="vehicle-form" id="settingsForm" style="grid-template-columns: 1fr;">
+                        <div class="form-group">
+                            <label for="companyName">Company Name</label>
+                            <input type="text" id="companyName" value="Oyera Auto Service Bay">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notifyEmail">Notification Email</label>
+                            <input type="email" id="notifyEmail" placeholder="admin@oasbay.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lowStockAlert">Low Stock Alert Threshold</label>
+                            <input type="number" id="lowStockAlert" min="0" value="10">
+                        </div>
+
+                        <button type="submit" class="primary-btn">Save Settings</button>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="../js/validation.js"></script>
+    <script src="../js/settings.js"></script>
+</body>
+
+</html>
