@@ -142,9 +142,6 @@
                                     <select id="customer" name="customer"
                                         style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
                                         <option value="">Select customer</option>
-                                        <option value="c001">Michael Okello</option>
-                                        <option value="c002">Grace Namatovu</option>
-                                        <option value="c003">Daniel Ouma</option>
                                     </select>
                                 </div>
 
@@ -152,10 +149,7 @@
                                     <label for="vehicle"><strong>Vehicle</strong></label>
                                     <select id="vehicle" name="vehicle"
                                         style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
-                                        <option value="">Select vehicle (for selected customer)</option>
-                                        <option value="v001">UBK 214K - Toyota Premio</option>
-                                        <option value="v002">UBA 781D - Nissan X-Trail</option>
-                                        <option value="v003">UBG 455M - Subaru Forester</option>
+                                        <option value="">Select vehicle</option>
                                     </select>
                                 </div>
 
@@ -167,27 +161,7 @@
                                 <fieldset style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px;">
                                     <legend><strong>Services Required</strong></legend>
 
-                                    <div style="display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 6px;">
-                                        <label><input type="checkbox" name="services" value="engine-oil-change"> Engine
-                                            Oil Change</label>
-                                        <label><input type="checkbox" name="services"
-                                                value="engine-oil-filter-replacement"> Engine Oil Filter
-                                            Replacement</label>
-                                        <label><input type="checkbox" name="services" value="gearbox-oil-change">
-                                            Gearbox Oil Change</label>
-                                        <label><input type="checkbox" name="services"
-                                                value="gearbox-filter-replacement"> Gearbox Filter Replacement</label>
-                                        <label><input type="checkbox" name="services" value="brake-fluid-replacement">
-                                            Brake Fluid Replacement</label>
-                                        <label><input type="checkbox" name="services" value="brake-pad-replacement">
-                                            Brake Pad Replacement</label>
-                                        <label><input type="checkbox" name="services" value="greasing"> Greasing</label>
-                                        <label><input type="checkbox" name="services" value="wheel-alignment"> Wheel
-                                            Alignment</label>
-                                        <label><input type="checkbox" name="services" value="wheel-balancing"> Wheel
-                                            Balancing</label>
-                                        <label><input type="checkbox" name="services" value="minor-repairs"> Minor
-                                            Repairs</label>
+                                    <div id="servicesCheckboxList" style="display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 6px;">
                                     </div>
 
                                 </fieldset>
@@ -195,11 +169,7 @@
                                 <fieldset style="border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px;">
                                     <legend><strong>Technicians Assigned</strong></legend>
 
-                                    <div style="display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 6px;">
-                                        <label><input type="checkbox" name="technicians" value="james"> James</label>
-                                        <label><input type="checkbox" name="technicians" value="peter"> Peter</label>
-                                        <label><input type="checkbox" name="technicians" value="sarah"> Sarah</label>
-                                        <label><input type="checkbox" name="technicians" value="david"> David</label>
+                                    <div id="techniciansCheckboxList" style="display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 6px;">
                                     </div>
 
                                 </fieldset>
@@ -311,8 +281,7 @@
 
                                 <div>
                                     <label for="service-id"><strong>Service ID</strong></label>
-                                    <input id="service-id" name="service-id" type="text" value="SRV-20260627-001"
-                                        readonly
+                                    <input id="service-id" name="service-id" type="text" readonly
                                         style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px; background: #f8fafc;">
                                 </div>
 
@@ -338,10 +307,6 @@
                                     <select id="senior-technician" name="senior-technician"
                                         style="width: 100%; height: 38px; margin-top: 6px; border: 1px solid #d1d5db; border-radius: 10px; padding: 0 10px;">
                                         <option value="">Select technician</option>
-                                        <option value="james">James</option>
-                                        <option value="peter">Peter</option>
-                                        <option value="sarah">Sarah</option>
-                                        <option value="david">David</option>
                                     </select>
                                 </div>
 
@@ -438,38 +403,38 @@
                             <div style="display: grid; gap: 12px;">
                                 <div style="display: flex; justify-content: space-between; gap: 10px;">
                                     <span>Customer</span>
-                                    <strong>Not selected</strong>
+                                    <strong id="summaryCustomer">Not selected</strong>
                                 </div>
 
                                 <div style="display: flex; justify-content: space-between; gap: 10px;">
                                     <span>Vehicle</span>
-                                    <strong>Not selected</strong>
+                                    <strong id="summaryVehicle">Not selected</strong>
                                 </div>
 
                                 <div style="display: flex; justify-content: space-between; gap: 10px;">
                                     <span>Services Selected</span>
-                                    <strong>0</strong>
+                                    <strong id="summaryServiceCount">0</strong>
                                 </div>
 
                                 <div style="display: flex; justify-content: space-between; gap: 10px;">
                                     <span>Technicians Assigned</span>
-                                    <strong>0</strong>
+                                    <strong id="summaryTechnicianCount">0</strong>
                                 </div>
 
                                 <div style="display: flex; justify-content: space-between; gap: 10px;">
                                     <span>Labour</span>
-                                    <strong>UGX 20,000</strong>
+                                    <strong id="summaryLabour">UGX 20,000</strong>
                                 </div>
 
                                 <div style="display: flex; justify-content: space-between; gap: 10px;">
                                     <span>Estimated Total</span>
-                                    <strong>UGX 0</strong>
+                                    <strong id="summaryTotal">UGX 0</strong>
                                 </div>
 
                                 <div
                                     style="display: flex; justify-content: space-between; gap: 10px; align-items: center;">
                                     <span>Payment Status</span>
-                                    <span class="status-badge inactive">Unpaid</span>
+                                    <span class="status-badge inactive" id="summaryPaymentStatus">Unpaid</span>
                                 </div>
                             </div>
 
@@ -499,6 +464,7 @@
         </main>
     </div>
     <script src="../js/validation.js"></script>
+    <script src="../js/store.js"></script>
     <script src="../js/service-registration.js"></script>
 </body>
 

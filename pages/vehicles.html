@@ -78,7 +78,7 @@
                         </div>
                         <div class="stat-content">
                             <p class="stat-title">Total Vehicles</p>
-                            <h2>1,248</h2>
+                            <h2 id="statTotalVehicles">0</h2>
                         </div>
                     </article>
 
@@ -87,8 +87,8 @@
                             <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
                         </div>
                         <div class="stat-content">
-                            <p class="stat-title">Vehicles Serviced Today</p>
-                            <h2>34</h2>
+                            <p class="stat-title">Vehicles In Service</p>
+                            <h2 id="statVehiclesInService">0</h2>
                         </div>
                     </article>
 
@@ -98,7 +98,7 @@
                         </div>
                         <div class="stat-content">
                             <p class="stat-title">Vehicles Awaiting Service</p>
-                            <h2>18</h2>
+                            <h2 id="statVehiclesPending">0</h2>
                         </div>
                     </article>
 
@@ -108,7 +108,7 @@
                         </div>
                         <div class="stat-content">
                             <p class="stat-title">Completed Services</p>
-                            <h2>412</h2>
+                            <h2 id="statVehiclesCompleted">0</h2>
                         </div>
                     </article>
                 </section>
@@ -197,55 +197,7 @@
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>VH-1024</td>
-                                    <td>UBA 421D</td>
-                                    <td>Sarah K.</td>
-                                    <td>Honda</td>
-                                    <td>Civic</td>
-                                    <td><span class="status-badge in-service">In Service</span></td>
-                                    <td class="action-cell">
-                                        <a href="#" class="action-icon view" aria-label="View vehicle"><i
-                                                class="fa-solid fa-eye"></i></a>
-                                        <a href="#" class="action-icon edit" aria-label="Edit vehicle"><i
-                                                class="fa-solid fa-pen"></i></a>
-                                        <a href="#" class="action-icon delete" aria-label="Delete vehicle"><i
-                                                class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>VH-1025</td>
-                                    <td>UBG 990Q</td>
-                                    <td>Michael O.</td>
-                                    <td>Toyota</td>
-                                    <td>RAV4</td>
-                                    <td><span class="status-badge completed">Completed</span></td>
-                                    <td class="action-cell">
-                                        <a href="#" class="action-icon view" aria-label="View vehicle"><i
-                                                class="fa-solid fa-eye"></i></a>
-                                        <a href="#" class="action-icon edit" aria-label="Edit vehicle"><i
-                                                class="fa-solid fa-pen"></i></a>
-                                        <a href="#" class="action-icon delete" aria-label="Delete vehicle"><i
-                                                class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>VH-1026</td>
-                                    <td>UBM 315N</td>
-                                    <td>Esther T.</td>
-                                    <td>Nissan</td>
-                                    <td>X-Trail</td>
-                                    <td><span class="status-badge pending">Pending</span></td>
-                                    <td class="action-cell">
-                                        <a href="#" class="action-icon view" aria-label="View vehicle"><i
-                                                class="fa-solid fa-eye"></i></a>
-                                        <a href="#" class="action-icon edit" aria-label="Edit vehicle"><i
-                                                class="fa-solid fa-pen"></i></a>
-                                        <a href="#" class="action-icon delete" aria-label="Delete vehicle"><i
-                                                class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
+                            <tbody id="vehicleTableBody">
                             </tbody>
                         </table>
                     </div>
@@ -254,6 +206,7 @@
         </main>
     </div>
     <script src="../js/validation.js"></script>
+    <script src="../js/store.js"></script>
     <script src="../js/vehicles.js"></script>
 </body>
 

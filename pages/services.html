@@ -135,7 +135,7 @@
 
                         <div class="stat-content">
                             <p class="stat-title">Total Services</p>
-                            <h2>9</h2>
+                            <h2 id="statTotalServices">0</h2>
                         </div>
 
                     </article>
@@ -150,7 +150,7 @@
 
                         <div class="stat-content">
                             <p class="stat-title">Active Services</p>
-                            <h2>9</h2>
+                            <h2 id="statActiveServices">0</h2>
                         </div>
 
                     </article>
@@ -165,7 +165,7 @@
 
                         <div class="stat-content">
                             <p class="stat-title">Most Requested</p>
-                            <h2>Engine Oil Change</h2>
+                            <h2 id="statMostRequested">-</h2>
                         </div>
 
                     </article>
@@ -180,7 +180,7 @@
 
                         <div class="stat-content">
                             <p class="stat-title">Service Categories</p>
-                            <h2>5</h2>
+                            <h2 id="statServiceCategories">0</h2>
                         </div>
 
                     </article>
@@ -243,276 +243,7 @@
 
 
 
-                            <tbody>
-
-                                <tr>
-
-                                    <td>S001</td>
-
-                                    <td>Engine Oil Change</td>
-
-                                    <td>Lubrication</td>
-
-                                    <td>79,000 - 200,000</td>
-
-                                    <td>30 Minutes</td>
-
-                                    <td><span class="status-badge active">Active</span></td>
-
-                                    <td class="action-cell">
-
-                                        <a href="#" class="action-icon edit">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </a>
-
-                                        <a href="#" class="action-icon delete">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </a>
-
-                                    </td>
-
-                                </tr>
-
-
-
-                                <tr>
-
-                                    <td>S002</td>
-
-                                    <td>Engine Oil Filter Replacement</td>
-
-                                    <td>Filters</td>
-
-                                    <td>15,000 - 20,000</td>
-
-                                    <td>15 Minutes</td>
-
-                                    <td><span class="status-badge active">Active</span></td>
-
-                                    <td class="action-cell">
-
-                                        <a href="#" class="action-icon edit">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </a>
-
-                                        <a href="#" class="action-icon delete">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </a>
-
-                                    </td>
-
-                                </tr>
-
-
-
-                                <tr>
-
-                                    <td>S003</td>
-
-                                    <td>Gearbox Oil Change</td>
-
-                                    <td>Lubrication</td>
-
-                                    <td>79,000 - 200,000</td>
-
-                                    <td>40 Minutes</td>
-
-                                    <td><span class="status-badge active">Active</span></td>
-
-                                    <td class="action-cell">
-
-                                        <a href="#" class="action-icon edit">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </a>
-
-                                        <a href="#" class="action-icon delete">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </a>
-
-                                    </td>
-
-                                </tr>
-
-
-
-                                <tr>
-
-                                    <td>S004</td>
-
-                                    <td>Gearbox Filter Replacement</td>
-
-                                    <td>Filters</td>
-
-                                    <td>15,000 - 20,000</td>
-
-                                    <td>20 Minutes</td>
-
-                                    <td><span class="status-badge active">Active</span></td>
-
-                                    <td class="action-cell">
-
-                                        <a href="#" class="action-icon edit">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </a>
-
-                                        <a href="#" class="action-icon delete">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </a>
-
-                                    </td>
-
-                                </tr>
-
-
-
-                                <tr>
-
-                                    <td>S005</td>
-
-                                    <td>Brake Fluid Replacement</td>
-
-                                    <td>Fluids</td>
-
-                                    <td>13,000 - 20,000</td>
-
-                                    <td>20 Minutes</td>
-
-                                    <td><span class="status-badge active">Active</span></td>
-
-                                    <td class="action-cell">
-
-                                        <a href="#" class="action-icon edit">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </a>
-
-                                        <a href="#" class="action-icon delete">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </a>
-
-                                    </td>
-
-                                </tr>
-
-
-
-                                <tr>
-
-                                    <td>S006</td>
-
-                                    <td>Brake Pad Replacement</td>
-
-                                    <td>Repairs</td>
-
-                                    <td>Varies</td>
-
-                                    <td>45 Minutes</td>
-
-                                    <td><span class="status-badge active">Active</span></td>
-
-                                    <td class="action-cell">
-
-                                        <a href="#" class="action-icon edit">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </a>
-
-                                        <a href="#" class="action-icon delete">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </a>
-
-                                    </td>
-
-                                </tr>
-
-
-
-                                <tr>
-
-                                    <td>S007</td>
-
-                                    <td>Greasing</td>
-
-                                    <td>Lubrication</td>
-
-                                    <td>Varies</td>
-
-                                    <td>20 Minutes</td>
-
-                                    <td><span class="status-badge active">Active</span></td>
-
-                                    <td class="action-cell">
-
-                                        <a href="#" class="action-icon edit">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </a>
-
-                                        <a href="#" class="action-icon delete">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </a>
-
-                                    </td>
-
-                                </tr>
-
-
-
-                                <tr>
-
-                                    <td>S008</td>
-
-                                    <td>Wheel Alignment</td>
-
-                                    <td>Wheel Service</td>
-
-                                    <td>30,000</td>
-
-                                    <td>45 Minutes</td>
-
-                                    <td><span class="status-badge active">Active</span></td>
-
-                                    <td class="action-cell">
-
-                                        <a href="#" class="action-icon edit">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </a>
-
-                                        <a href="#" class="action-icon delete">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </a>
-
-                                    </td>
-
-                                </tr>
-
-
-
-                                <tr>
-
-                                    <td>S009</td>
-
-                                    <td>Wheel Balancing</td>
-
-                                    <td>Wheel Service</td>
-
-                                    <td>20,000</td>
-
-                                    <td>30 Minutes</td>
-
-                                    <td><span class="status-badge active">Active</span></td>
-
-                                    <td class="action-cell">
-
-                                        <a href="#" class="action-icon edit">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </a>
-
-                                        <a href="#" class="action-icon delete">
-                                            <i class="fa-solid fa-trash"></i>
-                                        </a>
-
-                                    </td>
-
-                                </tr>
-
+                            <tbody id="serviceTableBody">
                             </tbody>
 
                         </table>
@@ -527,6 +258,9 @@
 
     </div>
 
+    <script src="../js/validation.js"></script>
+    <script src="../js/store.js"></script>
+    <script src="../js/services.js"></script>
 </body>
 
 </html>

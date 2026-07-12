@@ -74,7 +74,7 @@
                         </div>
                         <div class="stat-content">
                             <p class="stat-title">Total Technicians</p>
-                            <h2>28</h2>
+                            <h2 id="statTotalTechnicians">0</h2>
                         </div>
                     </article>
 
@@ -84,7 +84,7 @@
                         </div>
                         <div class="stat-content">
                             <p class="stat-title">Available Technicians</p>
-                            <h2>12</h2>
+                            <h2 id="statAvailableTechnicians">0</h2>
                         </div>
                     </article>
 
@@ -94,7 +94,7 @@
                         </div>
                         <div class="stat-content">
                             <p class="stat-title">Technicians on Duty</p>
-                            <h2>10</h2>
+                            <h2 id="statBusyTechnicians">0</h2>
                         </div>
                     </article>
 
@@ -104,7 +104,7 @@
                         </div>
                         <div class="stat-content">
                             <p class="stat-title">Assigned Jobs</p>
-                            <h2>19</h2>
+                            <h2 id="statAssignedJobs">0</h2>
                         </div>
                     </article>
                 </section>
@@ -195,72 +195,7 @@
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>TECH-1001</td>
-                                    <td>Samuel Otema</td>
-                                    <td>0770 400122</td>
-                                    <td>Engine Service</td>
-                                    <td>8 years</td>
-                                    <td><span class="status-badge available">Available</span></td>
-                                    <td class="action-cell">
-                                        <a href="#" class="action-icon view" aria-label="View technician"><i class="fa-solid fa-eye"></i></a>
-                                        <a href="#" class="action-icon edit" aria-label="Edit technician"><i class="fa-solid fa-pen"></i></a>
-                                        <a href="#" class="action-icon delete" aria-label="Delete technician"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>TECH-1002</td>
-                                    <td>Harriet Namata</td>
-                                    <td>0752 313408</td>
-                                    <td>Brake Service</td>
-                                    <td>6 years</td>
-                                    <td><span class="status-badge busy">Busy</span></td>
-                                    <td class="action-cell">
-                                        <a href="#" class="action-icon view" aria-label="View technician"><i class="fa-solid fa-eye"></i></a>
-                                        <a href="#" class="action-icon edit" aria-label="Edit technician"><i class="fa-solid fa-pen"></i></a>
-                                        <a href="#" class="action-icon delete" aria-label="Delete technician"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>TECH-1003</td>
-                                    <td>Peter Lubega</td>
-                                    <td>0709 885221</td>
-                                    <td>Wheel Alignment</td>
-                                    <td>9 years</td>
-                                    <td><span class="status-badge off-duty">Off Duty</span></td>
-                                    <td class="action-cell">
-                                        <a href="#" class="action-icon view" aria-label="View technician"><i class="fa-solid fa-eye"></i></a>
-                                        <a href="#" class="action-icon edit" aria-label="Edit technician"><i class="fa-solid fa-pen"></i></a>
-                                        <a href="#" class="action-icon delete" aria-label="Delete technician"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>TECH-1004</td>
-                                    <td>Esther Akullo</td>
-                                    <td>0784 297541</td>
-                                    <td>Wheel Balancing</td>
-                                    <td>5 years</td>
-                                    <td><span class="status-badge available">Available</span></td>
-                                    <td class="action-cell">
-                                        <a href="#" class="action-icon view" aria-label="View technician"><i class="fa-solid fa-eye"></i></a>
-                                        <a href="#" class="action-icon edit" aria-label="Edit technician"><i class="fa-solid fa-pen"></i></a>
-                                        <a href="#" class="action-icon delete" aria-label="Delete technician"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>TECH-1005</td>
-                                    <td>John Bosco Ocen</td>
-                                    <td>0714 654209</td>
-                                    <td>General Maintenance</td>
-                                    <td>11 years</td>
-                                    <td><span class="status-badge busy">Busy</span></td>
-                                    <td class="action-cell">
-                                        <a href="#" class="action-icon view" aria-label="View technician"><i class="fa-solid fa-eye"></i></a>
-                                        <a href="#" class="action-icon edit" aria-label="Edit technician"><i class="fa-solid fa-pen"></i></a>
-                                        <a href="#" class="action-icon delete" aria-label="Delete technician"><i class="fa-solid fa-trash"></i></a>
-                                    </td>
-                                </tr>
+                            <tbody id="technicianTableBody">
                             </tbody>
                         </table>
                     </div>
@@ -292,27 +227,7 @@
                                 <option>Minor Repairs</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="assigned-technicians" value="samuel">
-                                <span>Samuel Otema</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="assigned-technicians" value="harriet">
-                                <span>Harriet Namata</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="assigned-technicians" value="peter">
-                                <span>Peter Lubega</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="assigned-technicians" value="esther">
-                                <span>Esther Akullo</span>
-                            </label>
-                            <label class="checkbox-item">
-                                <input type="checkbox" name="assigned-technicians" value="bosco">
-                                <span>Bosco Ochen</span>
-                            </label>
+                        <div class="form-group" id="assignTechnicianCheckboxes">
                         </div>
 
                         <button type="submit" class="primary-btn">Assign Technician</button>
@@ -322,6 +237,7 @@
         </main>
     </div>
     <script src="../js/validation.js"></script>
+    <script src="../js/store.js"></script>
     <script src="../js/technicians.js"></script>
 </body>
 </html>

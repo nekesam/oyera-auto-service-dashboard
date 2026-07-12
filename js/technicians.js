@@ -1,8 +1,82 @@
-// Validates the two forms on pages/technicians.html:
-// 1. Technician Registration form
-// 2. Assign Technician to Service form
+// Validates the two forms on pages/technicians.html and renders the
+// Technician Records table, stats, and assignment checkboxes from real data.
 
 const technicianForm = document.querySelector(".technician-form");
+const technicianTableBody = document.getElementById("technicianTableBody");
+
+const TECHNICIAN_STATUS_LABEL = {
+    "available": "Available",
+    "busy": "Busy",
+    "off-duty": "Off Duty"
+};
+
+function renderTechnicianStats() {
+    const store = getStore();
+    const technicians = store.technicians;
+
+    const available = technicians.filter(function (t) { return t.status === "available"; });
+    const busy = technicians.filter(function (t) { return t.status === "busy"; });
+
+    document.getElementById("statTotalTechnicians").textContent = technicians.length;
+    document.getElementById("statAvailableTechnicians").textContent = available.length;
+    document.getElementById("statBusyTechnicians").textContent = busy.length;
+    document.getElementById("statAssignedJobs").textContent = store.assignments.length;
+}
+
+function renderTechnicianTable() {
+    const store = getStore();
+    technicianTableBody.innerHTML = "";
+
+    store.technicians.forEach(function (technician) {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${technician.id}</td>
+            <td>${technician.firstName} ${technician.lastName}</td>
+            <td>${technician.phone}</td>
+            <td>${technician.specialization}</td>
+            <td>${technician.experience} years</td>
+            <td><span class="status-badge ${technician.status}">${TECHNICIAN_STATUS_LABEL[technician.status]}</span></td>
+            <td class="action-cell">
+                <a href="#" class="action-icon view" aria-label="View technician"><i class="fa-solid fa-eye"></i></a>
+                <a href="#" class="action-icon edit" aria-label="Edit technician"><i class="fa-solid fa-pen"></i></a>
+                <a href="#" class="action-icon delete delete-technician" aria-label="Delete technician" data-id="${technician.id}"><i class="fa-solid fa-trash"></i></a>
+            </td>
+        `;
+        technicianTableBody.appendChild(row);
+    });
+
+    technicianTableBody.querySelectorAll(".delete-technician").forEach(function (icon) {
+        icon.addEventListener("click", function (event) {
+            event.preventDefault();
+            deleteTechnician(icon.dataset.id);
+            renderTechnicians();
+        });
+    });
+}
+
+function renderAssignmentCheckboxes() {
+    const store = getStore();
+    const checkboxContainer = document.getElementById("assignTechnicianCheckboxes");
+    checkboxContainer.innerHTML = "";
+
+    store.technicians.forEach(function (technician) {
+        const label = document.createElement("label");
+        label.className = "checkbox-item";
+        label.innerHTML = `
+            <input type="checkbox" name="assigned-technicians" value="${technician.id}">
+            <span>${technician.firstName} ${technician.lastName}</span>
+        `;
+        checkboxContainer.appendChild(label);
+    });
+}
+
+function renderTechnicians() {
+    renderTechnicianStats();
+    renderTechnicianTable();
+    renderAssignmentCheckboxes();
+}
+
+renderTechnicians();
 
 technicianForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -89,10 +163,24 @@ technicianForm.addEventListener("submit", function (event) {
         clearError(status);
     }
 
-    if (isValid) {
-        showFormSuccess(technicianForm, "Technician registered successfully!");
-        technicianForm.reset();
+    if (!isValid) {
+        return;
     }
+
+    addTechnician({
+        id: technicianId.value.trim(),
+        firstName: firstName.value.trim(),
+        lastName: lastName.value.trim(),
+        phone: phoneNumber.value.trim(),
+        email: emailAddress.value.trim(),
+        specialization: specialization.value,
+        experience: Number(experience.value),
+        status: status.value.toLowerCase().replace(" ", "-")
+    });
+
+    showFormSuccess(technicianForm, "Technician registered successfully!");
+    technicianForm.reset();
+    renderTechnicians();
 });
 
 const assignmentForm = document.querySelector(".assignment-form");
@@ -132,8 +220,21 @@ assignmentForm.addEventListener("submit", function (event) {
         clearError(checkboxGroup);
     }
 
-    if (isValid) {
-        showFormSuccess(assignmentForm, "Technician assigned successfully!");
-        assignmentForm.reset();
+    if (!isValid) {
+        return;
     }
+
+    const technicianIds = Array.from(technicianCheckboxes).map(function (checkbox) {
+        return checkbox.value;
+    });
+
+    addAssignment({
+        plateNumber: plateNumber.value.trim(),
+        serviceType: serviceType.value,
+        technicianIds: technicianIds
+    });
+
+    showFormSuccess(assignmentForm, "Technician assigned successfully!");
+    assignmentForm.reset();
+    renderTechnicianStats();
 });
